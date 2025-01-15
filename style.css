@@ -35,7 +35,7 @@ body {
 }
 
 #landing-page h1 {
-  font-size: 8rem;
+  font-size: 6rem;
   margin-bottom: 20px;
   font-family: "Jersey 15", serif;
   font-weight: 400;
@@ -43,7 +43,7 @@ body {
 }
 
 #landing-page p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 30px;
   font-family: "Roboto Condensed", serif;
   font-optical-sizing: auto;
