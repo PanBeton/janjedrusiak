@@ -1,0 +1,342 @@
+/* Styl ogólny */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+  }
+
+/* Header styles */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #007BFF;
+  }
+  
+  /* Menu icon for mobile */
+  .menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  /* Landing Page */
+  #landing-page {
+    position: relative;
+    background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2Z5dWFuYjZzendmOWlxenFvdG1xcnA5dXZ3dnRwenViYWJiM2U1eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QpVUMRUJGokfqXyfa1/giphy.gif') no-repeat fixed center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  #landing-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);  /* Przyciemnia tło (czarna warstwa z przezroczystością) */
+    z-index: 1;
+  }
+  
+  #landing-page > div {
+    position: relative;
+    z-index: 2;
+  }
+  
+  #landing-page h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  #landing-page p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+  }
+  
+  #landing-page .btn {
+    font-size: 1.1rem;
+  }
+  
+  /* Sekcja O mnie */
+  #about {
+    background-color: #f8f9fa;
+  }
+  
+  /* Stylizacja sekcji 'O mnie' */
+  #about {
+    background-color: #f8f9fa; /* Jasne tło */
+  }
+  
+  #about .row {
+    margin-bottom: 30px;
+  }
+  
+  #about .card-body {
+    padding: 30px; /* Zwiększenie przestrzeni wewnętrznej */
+  }
+  
+  #about .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  #about .card-text {
+    font-size: 1.125rem;
+    color: #6c757d;
+  }
+  
+  #about .img-fluid {
+    width: 100%;
+    max-width: 300px; /* Maksymalna szerokość dla zdjęcia */
+    object-fit: cover; /* Zabezpieczenie zdjęcia przed rozciąganiem */
+    margin-bottom: 20px;
+  }
+  
+  #about h4 {
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+  
+  #about h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  #about ul {
+    padding-left: 20px;
+  }
+  
+  #about li {
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+  
+  #about i {
+    margin-right: 10px;
+    color: #28a745; /* Kolor zielony dla ikonek */
+  }
+  
+  #stats h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #stats .counter {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-right: 5px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #stats .counter:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Sekcja FAQ */
+  .faq-section {
+    background-color: #f8f9fa;
+    padding: 50px 20px;
+  }
+  
+  .faq-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #343a40;
+  }
+  
+  .faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px;
+    color: #007bff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .faq-question:hover {
+    color: #0056b3;
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #6c757d;
+    padding: 0 10px;
+  }
+  
+  .faq-item.active .faq-answer {
+    max-height: 200px; /* Dostosuj do potrzeb */
+  }
+  
+  
+  
+  /* Usługi */
+  #services .card {
+    border: none; /* Usuwanie ramki */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Dodanie cienia */
+    border-radius: 10px; /* Zaokrąglone rogi */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animacja na hover */
+  }
+  
+  #services .card:hover {
+    transform: translateY(-5px); /* Lekka animacja przy hoverze */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Zwiększenie cienia przy hoverze */
+  }
+  
+  #services .card-body {
+    padding: 30px; /* Zwiększenie przestrzeni wewnętrznej */
+  }
+  
+  #services .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  #services .card-text {
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  
+  /* Ikony */
+  #services i {
+    color: #007bff; /* Kolor ikon */
+  }
+  
+  /* Stylizacja sekcji kontaktowej */
+  #contact {
+    background-color: #f8f9fa; /* Jasne tło */
+  }
+  
+  #contact .card {
+    border-radius: 10px; /* Zaokrąglone rogi dla kart */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Dodanie animacji */
+  }
+  
+  #contact .card-body {
+    padding: 30px; /* Zwiększenie przestrzeni wewnętrznej */
+  }
+  
+  #contact .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  #contact .card-text {
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  
+  #contact i {
+    color: #007bff; /* Kolor ikon */
+  }
+  
+  #contact a {
+    color: #007bff; /* Kolor linków */
+    transition: color 0.3s ease;
+  }
+  
+  #contact a:hover {
+    color: #0056b3; /* Zmiana koloru linków przy najechaniu */
+  }
+  
+  /* Dodanie przestrzeni między kolumnami w wersji mobilnej */
+  @media (max-width: 767px) {
+    .menu-icon {
+        display: block;
+      }
+    
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+    
+      .nav-links.active {
+        display: flex;
+      }
+    
+      .nav-links li {
+        margin: 15px 0;
+        text-align: center;
+      }
+    #landing-page {
+        padding: 20px;
+    }
+    #contact .col-md-6 {
+      margin-bottom: 20px; /* Dodanie przestrzeni pomiędzy kolumnami w mniejszych ekranach */
+    }
+  }
+  
+  
+  /* Stopka */
+  footer {
+    background-color: #343a40;
+  }

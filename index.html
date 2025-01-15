@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twoja Strona - Usługi Tworzenia Stron Internetowych</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <section id="landing-page" class="vh-100 d-flex justify-content-center align-items-center text-center bg-primary text-white">
+      <div>
+        <h1 class="display-3">Cześć, jestem Jan Jędrusiak</h1>
+        <p class="lead">Specjalizuję się w tworzeniu profesjonalnych stron internetowych</p>
+        <a href="#about" class="btn btn-primary btn-lg">Dowiedz się więcej</a>
+      </div>
+    </section>
+
+    <header class="header">
+        <nav class="navbar">
+          <a href="#" class="logo"><img src="logonobg.png" alt="Logo" width="10%"></a>
+          <div class="menu-icon" id="menu-icon">
+            &#9776;
+          </div>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#about">O mnie</a></li>
+            <li><a href="#services">Usługi</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+          </ul>
+        </nav>
+      </header>
+  
+    <!-- O mnie -->
+    <section id="about" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4">Poznajmy się</h2>
+        <div class="row align-items-center">
+          <!-- Zdjęcie -->
+          <div class="col-md-4 mb-4 text-center">
+            <img src="image.jpeg" alt="Jan Jędrusiak" class="img-fluid" />
+          </div>
+          <!-- Tekst o mnie -->
+          <div class="col-md-8">
+            <h4 class="mb-3">Jan Jędrusiak</h4>
+            <p class="lead">Jestem freelancerem zajmującym się tworzeniem stron internetowych. Z pasją podchodzę do każdego projektu, dbając o jakość, nowoczesny design i pełną funkcjonalność. Moje podejście do pracy opiera się na bliskiej współpracy z klientem, aby spełnić jego oczekiwania i dostarczyć rozwiązania idealnie dopasowane do potrzeb biznesowych.</p>
+            
+            <h5>Moje umiejętności:</h5>
+            <ul>
+              <li><i class="fas fa-check-circle text-success"></i> Tworzenie responsywnych stron internetowych</li>
+              <li><i class="fas fa-check-circle text-success"></i> Optymalizacja SEO</li>
+              <li><i class="fas fa-check-circle text-success"></i> Programowanie w HTML, CSS, JavaScript, Bootstrap</li>
+              <li><i class="fas fa-check-circle text-success"></i> Integracja z systemami CMS (WordPress, Joomla)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats" class="py-5 text-center">
+      <div class="container">
+        <h2 class="mb-4">Statystyki</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <h3><span data-target="5" class="counter">5</span></h3>
+            <p>Lat doświadczenia</p>
+          </div>
+          <div class="col-md-4">
+            <h3><span data-target="9" class="counter">9</span></h3>
+            <p>Zrealizowanych projektów</p>
+          </div>
+          <div class="col-md-4">
+            <h3><span data-target="100" class="counter">100</span>%</h3>
+            <p>Klientów</p>
+          </div>
+        </div>
+      </div>
+    </section>    
+    
+    <section id="services" class="bg-light py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Jak mogę ci pomóc?</h2>
+        <div class="row">
+          <!-- Kafelek 1 -->
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="fas fa-code fa-4x mb-3"></i>
+                <h5 class="card-title">Tworzenie stron internetowych</h5>
+                <p class="card-text">Profesjonalne strony internetowe dostosowane do Twoich potrzeb.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Kafelek 2 -->
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="fas fa-mobile-alt fa-4x mb-3"></i>
+                <h5 class="card-title">Projektowanie responsywnych stron</h5>
+                <p class="card-text">Strony, które doskonale działają na każdym urządzeniu.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Kafelek 3 -->
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="fas fa-search fa-4x mb-3"></i>
+                <h5 class="card-title">Optymalizacja SEO</h5>
+                <p class="card-text">Poprawa widoczności Twojej strony w wyszukiwarkach internetowych.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+      <div class="container">
+        <h2 class="faq-title">FAQ</h2>
+        <div class="faq-item">
+          <button class="faq-question">Jak długo trwa proces tworzenia strony internetowej?</button>
+          <div class="faq-answer">
+            <p>Czas realizacji zależy od złożoności projektu. Proste strony typu "wizytówka" mogą być gotowe w ciągu kilku dni, natomiast bardziej zaawansowane projekty mogą zająć kilka tygodni.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Czy pomagasz z domeną i hostingiem?</button>
+          <div class="faq-answer">
+            <p>Tak, mogę doradzić w wyborze domeny i hostingu, a także pomóc w ich konfiguracji, aby Twoja strona była szybko dostępna online.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Czy mogę samodzielnie zarządzać stroną po jej wykonaniu?</button>
+          <div class="faq-answer">
+            <p>Oczywiście! Tworzę strony z intuicyjnymi systemami zarządzania treścią (CMS), dzięki czemu możesz łatwo edytować treści bez znajomości programowania.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Czy oferujesz wsparcie techniczne po wykonaniu strony?</button>
+          <div class="faq-answer">
+            <p>Tak, zapewniam wsparcie techniczne i pomoc w rozwiązywaniu problemów po wdrożeniu strony.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+        
+
+  <!-- Kontakt -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Napisz do mnie!</h2>
+      <div class="row">
+        <!-- E-mail -->
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+              <i class="fas fa-envelope fa-3x mb-3 text-primary"></i>
+              <h5 class="card-title">E-mail</h5>
+              <p class="card-text">
+                Skontaktuj się ze mną za pośrednictwem e-maila:
+                <a href="mailto:jan.jedrusiak@example.com" class="text-decoration-none text-primary">jedrusiakjan07@gmail.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Facebook -->
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+              <i class="fab fa-facebook fa-3x mb-3 text-primary"></i>
+              <h5 class="card-title">Facebook</h5>
+              <p class="card-text">
+                Odwiedź moją stronę na Facebooku:
+                <a href="https://www.facebook.com/profile.php?id=61555726413206" target="_blank" class="text-decoration-none text-primary">Jan Jędrusiak - Front-end Developer</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-3">
+    <div class="container text-center">
+      <p>&copy; 2025 Jan Jędrusiak | Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll(".counter");
+      
+      counters.forEach(counter => {
+        counter.innerText = "0"; // Ustawiamy początkową wartość
+        
+        const updateCounter = () => {
+          const target = +counter.getAttribute("data-target"); // Pobieramy wartość docelową
+          const current = +counter.innerText; // Aktualna wartość licznika
+          const increment = target / 200; // Szybkość przyrostu
+          
+          if (current < target) {
+            counter.innerText = Math.ceil(current + increment); // Poprawiona interpolacja
+            setTimeout(updateCounter, 10);
+          } else {
+            counter.innerText = target; // Ustawiamy wartość końcową
+          }
+        };
+    
+        // Uruchamiamy licznik
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              updateCounter();
+              observer.disconnect(); // Zatrzymanie obserwacji
+            }
+          });
+        });
+        observer.observe(counter);
+      });
+  
+      // Obsługa FAQ
+      document.querySelectorAll(".faq-question").forEach((button) => {
+        button.addEventListener("click", () => {
+          const faqItem = button.parentElement;
+          faqItem.classList.toggle("active");
+      
+          const answer = faqItem.querySelector(".faq-answer");
+          if (faqItem.classList.contains("active")) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          } else {
+            answer.style.maxHeight = null;
+          }
+        });
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+  const menuIcon = document.getElementById("menu-icon");
+  const navLinks = document.getElementById("nav-links");
+
+  // Toggle menu on click
+  menuIcon.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // Optional: Close the menu when clicking on a link
+  navLinks.addEventListener("click", (event) => {
+    if (event.target.tagName === "A") {
+      navLinks.classList.remove("active");
+    }
+  });
+});
+
+  </script>
+  
+</body>
+</html>
