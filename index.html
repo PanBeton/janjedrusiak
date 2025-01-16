@@ -20,6 +20,21 @@
         <a href="#about" class="btn btn-primary btn-lg">Dowiedz się więcej</a>
       </div>
     </section>
+
+    <header class="header">
+      <nav class="navbar">
+        <a href="#" class="logo"><img src="logonobg.jpg" alt="Logo" width="50px"></a>
+        <div class="menu-icon" id="menu-icon">
+          &#9776;
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about">O mnie</a></li>
+          <li><a href="#services">Usługi</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
   
     <!-- O mnie -->
     <section id="about" class="py-5 bg-light">
@@ -40,7 +55,6 @@
               <li><i class="fas fa-check-circle text-success"></i> Tworzenie responsywnych stron internetowych</li>
               <li><i class="fas fa-check-circle text-success"></i> Optymalizacja SEO</li>
               <li><i class="fas fa-check-circle text-success"></i> Programowanie w HTML, CSS, JavaScript, Bootstrap</li>
-              <li><i class="fas fa-check-circle text-success"></i> Integracja z systemami CMS (WordPress, Joomla)</li>
             </ul>
           </div>
         </div>
@@ -56,8 +70,8 @@
             <p>Lat doświadczenia</p>
           </div>
           <div class="col-md-4">
-            <h3><span data-target="9" class="counter">9</span></h3>
-            <p>Zrealizowanych projektów</p>
+            <h3><span data-target="100" class="counter">100</span>%</h3>
+            <p>Dbałości o szczegóły</p>
           </div>
           <div class="col-md-4">
             <h3><span data-target="100" class="counter">100</span>%</h3>
@@ -232,6 +246,22 @@
       });
     });
     
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuIcon = document.getElementById("menu-icon");
+      const navLinks = document.getElementById("nav-links");
+    
+      // Toggle menu on click
+      menuIcon.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    
+      // Optional: Close the menu when clicking on a link
+      navLinks.addEventListener("click", (event) => {
+        if (event.target.tagName === "A") {
+          navLinks.classList.remove("active");
+        }
+      });
+    });
 
   </script>
 </body>

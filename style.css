@@ -10,7 +10,7 @@ body {
 /* Landing Page */
 #landing-page {
   position: relative;
-  background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2Z5dWFuYjZzendmOWlxenFvdG1xcnA5dXZ3dnRwenViYWJiM2U1eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QpVUMRUJGokfqXyfa1/giphy.gif') no-repeat fixed center center/cover;
+  background: url('https://media.giphy.com/media/ItKQq9jkhuYBW/giphy.gif?cid=790b7611mv1w5d2p8c9jostjqdisz1g6bvr9iwleultr1q69&ep=v1_gifs_search&rid=giphy.gif&ct=g') no-repeat fixed center center/cover;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -54,6 +54,59 @@ body {
 #landing-page .btn {
   font-size: 1.1rem;
 }
+
+/* Header styles */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #007BFF;
+}
+
+/* Menu icon for mobile */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 
 /* Sekcja O mnie */
 #about {
@@ -264,6 +317,29 @@ body {
 @media (max-width: 767px) {
   #contact .col-md-6 {
     margin-bottom: 20px; /* Dodanie przestrzeni pomiędzy kolumnami w mniejszych ekranach */
+  }
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    text-align: center;
   }
 }
 
