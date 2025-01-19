@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-/* Styl ogólny */
+
+/* ========================== */
+/* STYL OGÓLNY */
+/* ========================== */
 body {
   font-family: 'Roboto', sans-serif;
-
   line-height: 1.6;
 }
 
-/* Landing Page */
+/* ========================== */
+/* LANDING PAGE */
+/* ========================== */
 #landing-page {
   position: relative;
   background: url('https://media.giphy.com/media/ItKQq9jkhuYBW/giphy.gif?cid=790b7611mv1w5d2p8c9jostjqdisz1g6bvr9iwleultr1q69&ep=v1_gifs_search&rid=giphy.gif&ct=g') no-repeat fixed center center/cover;
@@ -55,7 +59,9 @@ body {
   font-size: 1.1rem;
 }
 
-/* Header styles */
+/* ========================== */
+/* HEADER */
+/* ========================== */
 .header {
   position: sticky;
   top: 0;
@@ -107,15 +113,11 @@ body {
   cursor: pointer;
 }
 
-
-/* Sekcja O mnie */
+/* ========================== */
+/* SEKCJA O MNIE */
+/* ========================== */
 #about {
   background-color: #f8f9fa;
-}
-
-/* Stylizacja sekcji 'O mnie' */
-#about {
-  background-color: #f8f9fa; /* Jasne tło */
 }
 
 #about .row {
@@ -169,6 +171,9 @@ body {
   color: #28a745; /* Kolor zielony dla ikonek */
 }
 
+/* ========================== */
+/* STATYSTYKI */
+/* ========================== */
 #stats h3 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -190,7 +195,9 @@ body {
   transform: scale(1.1);
 }
 
-/* Sekcja FAQ */
+/* ========================== */
+/* SEKCJA FAQ */
+/* ========================== */
 .faq-section {
   background-color: #f8f9fa;
   padding: 50px 20px;
@@ -240,14 +247,15 @@ body {
   max-height: 200px; /* Dostosuj do potrzeb */
 }
 
-
-
-/* Usługi */
+/* ========================== */
+/* USŁUGI */
+/* ========================== */
 #services .card {
   border: none; /* Usuwanie ramki */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Dodanie cienia */
   border-radius: 10px; /* Zaokrąglone rogi */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animacja na hover */
+  margin-bottom: 30px;
 }
 
 #services .card:hover {
@@ -275,7 +283,9 @@ body {
   color: #007bff; /* Kolor ikon */
 }
 
-/* Stylizacja sekcji kontaktowej */
+/* ========================== */
+/* SEKCJA KONTAKTOWA */
+/* ========================== */
 #contact {
   background-color: #f8f9fa; /* Jasne tło */
 }
@@ -313,11 +323,14 @@ body {
   color: #0056b3; /* Zmiana koloru linków przy najechaniu */
 }
 
-/* Dodanie przestrzeni między kolumnami w wersji mobilnej */
+/* ========================== */
+/* MEDIA QUERY DLA MOBILE */
+/* ========================== */
 @media (max-width: 767px) {
   #contact .col-md-6 {
     margin-bottom: 20px; /* Dodanie przestrzeni pomiędzy kolumnami w mniejszych ekranach */
   }
+
   .menu-icon {
     display: block;
   }
@@ -343,8 +356,35 @@ body {
   }
 }
 
-
-/* Stopka */
+/* ========================== */
+/* STOPKA */
+/* ========================== */
 footer {
   background-color: #343a40;
+}
+
+/* ========================== */
+/* ANIMACJE SCROLL REVEAL */
+/* ========================== */
+.reveal {
+  opacity: 0; /* Ukrycie sekcji */
+  transform: translateY(50px); /* Przesunięcie w dół */
+  transition: all 0.6s ease; /* Płynny efekt */
+}
+
+.reveal.active {
+  opacity: 1; /* Widoczność sekcji */
+  transform: translateY(0); /* Powrót do pierwotnej pozycji */
+}
+
+.reveal:nth-child(1) {
+  transition-delay: 0s;
+}
+
+.reveal:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.reveal:nth-child(3) {
+  transition-delay: 0.4s;
 }
