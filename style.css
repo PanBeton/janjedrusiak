@@ -345,15 +345,37 @@ h2 {
 /* ARTYKUŁY */
 /* ========================== */
 
+/* Zabezpieczenie stałej wysokości kafelków */
 .card {
-  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
+
+/* Przyciski na dole kafelka */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Rozkłada elementy na całą wysokość */
+}
+
+.btn {
+  margin-top: auto; /* Umieszcza przycisk na dole */
+  max-width: 50%;
+}
+
+/* Upewniamy się, że wszystkie karty mają te same wymiary */
+.card img {
+  height: auto;
+  width: 100%;
+}
+
 
 /* ========================== */
 /* STOPKA */
 /* ========================== */
 footer {
-  margin-top: auto;
+  margin: auto;
   }
 
 /* ========================== */
@@ -387,8 +409,8 @@ footer {
     margin: 15px 0;
     text-align: center;
   }
-  footer {
-    margin-bottom: auto;
+  .card { 
+    margin-bottom: 50px;
   }
 }
 
