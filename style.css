@@ -386,6 +386,10 @@ footer {
     margin: 15px 0;
     text-align: center;
   }
+
+  .card {
+    margin-bottom: 50px;
+  }
   footer {
     position: absolute;
     bottom: 0;
