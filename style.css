@@ -341,10 +341,6 @@ h2 {
   color: #0056b3; /* Zmiana koloru linków przy najechaniu */
 }
 
-/* ========================== */
-/* ARTYKUŁY */
-/* ========================== */
-
 /* Zabezpieczenie stałej wysokości kafelków */
 .card {
   display: flex;
