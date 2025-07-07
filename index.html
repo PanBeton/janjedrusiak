@@ -1,156 +1,218 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C50L89WB3J"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-  
+
     gtag('config', 'G-C50L89WB3J');
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jan Jędrusiak - Front-end Developer</title>
   <meta name="title" content="Profesjonalne Strony Internetowe - Jan Jędrusiak">
-  <meta name="description" content="Tworzę profesjonalne strony internetowe dostosowane do Twoich potrzeb. Skontaktuj się, by stworzyć swoją stronę internetową!">
-  <meta name="keywords" content="strony internetowe, projektowanie stron, frontend, web development, usługi internetowe, freelancer, Kraków, Jan Jędrusiak">
+  <meta name="description"
+    content="Tworzę profesjonalne strony internetowe dostosowane do Twoich potrzeb. Skontaktuj się, by stworzyć swoją stronę internetową!">
+  <meta name="keywords"
+    content="strony internetowe, projektowanie stron, frontend, web development, usługi internetowe, freelancer, Kraków, Jan Jędrusiak">
   <meta name="author" content="Jan Jędrusiak">
   <!-- META OG -->
   <meta property="og:title" content="Profesjonalne Strony Internetowe - Jan Jędrusiak">
-  <meta property="og:description" content="Tworzę profesjonalne strony internetowe dostosowane do Twoich potrzeb. Skontaktuj się, by stworzyć swoją stronę internetową!">
+  <meta property="og:description"
+    content="Tworzę profesjonalne strony internetowe dostosowane do Twoich potrzeb. Skontaktuj się, by stworzyć swoją stronę internetową!">
   <meta property="og:image" content="/fav.jpg">
-  <!-- <meta property="og:url" content=""> -->
+  <!-- META-->
   <meta property="og:site_name" content="Jan Jędrusiak">
   <meta property="og:type" content="website">
-  <!-- LINK -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  <link rel="icon" type="image/x-icon" href="fav.jpg">
-  <script type="text/javascript">
-    !function(){"use strict";function e(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],c=document.createElement("script");c.src=e,t?c.type="module":(c.async=!0,c.type="text/javascript",c.setAttribute("nomodule",""));var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(c,n)}!function(t,c){!function(t,c,n){var a,o,r;n.accountId=c,null!==(a=t.marfeel)&&void 0!==a||(t.marfeel={}),null!==(o=(r=t.marfeel).cmd)&&void 0!==o||(r.cmd=[]),t.marfeel.config=n;var i="https://sdk.mrf.io/statics";e("".concat(i,"/marfeel-sdk.js?id=").concat(c),!0),e("".concat(i,"/marfeel-sdk.es5.js?id=").concat(c),!1)}(t,c,arguments.length>2&&void 0!==arguments[2]?arguments[2]:{})}(window,7978,{} /* Config */)}();
-    </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/fav.jpg">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDTKDH3T"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  
-  <!-- Landing Page -->
-  <section id="landing-page" class="vh-100 d-flex justify-content-center align-items-center text-center bg-primary text-white">
-    <div>
-      <h1 class="display-3">Jan Jędrusiak</h1>
-      <p class="lead">Twoja wizja, moje rozwiązania</p>
-      <a href="#about" class="btn btn-primary btn-lg">Dowiedz się więcej</a>
-    </div>
-  </section>
-
-  <!-- Header (Navigation) -->
-  <header class="header">
-    <nav class="navbar">
-      <a href="#" class="logo"><img src="logonobg.jpg" alt="Logo" width="50px" loading="lazy"></a>
-      <div class="menu-icon" id="menu-icon">&#9776;</div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">O mnie</a></li>
-        <li><a href="aktualnosci.html">Aktualności</a></li>
-        <li><a href="#services">Usługi</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Kontakt</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- O mnie -->
-  <section id="about" class="reveal py-5 bg-light">
+  <!-- Nawigacja -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="start">
     <div class="container">
-      <h2 class="text-center mb-4">Poznajmy się</h2>
-      <div class="row align-items-center">
-        <div class="col-md-4 mb-4 text-center">
-          <img src="image.jpeg" alt="Jan Jędrusiak" class="img-fluid" loading="lazy"/>
-        </div>
-        <div class="col-md-8">
-          <h4 class="mb-3">Jan Jędrusiak</h4>
-          <p class="lead">Jestem freelancerem zajmującym się tworzeniem stron internetowych. Z pasją podchodzę do każdego projektu, dbając o jakość, nowoczesny design i pełną funkcjonalność. Moje podejście do pracy opiera się na bliskiej współpracy z klientem, aby spełnić jego oczekiwania i dostarczyć rozwiązania idealnie dopasowane do potrzeb biznesowych.</p>
-          
-          <h5>Moje umiejętności:</h5>
-          <ul>
-            <li><i class="fas fa-check-circle text-success"></i> Tworzenie responsywnych stron internetowych</li>
-            <li><i class="fas fa-check-circle text-success"></i> Optymalizacja SEO</li>
-            <li><i class="fas fa-check-circle text-success"></i> Programowanie w HTML, CSS, JavaScript, Bootstrap</li>
-          </ul>
-
-          <h5 class="mt-4">Dlaczego warto ze mną współpracować?</h5>
-          <p>Oferuję profesjonalne podejście do każdego projektu oraz pełną transparentność na każdym etapie jego realizacji. Oto kilka powodów, dla których warto mi zaufać:</p>
-          <ul>
-            <li><strong>Doświadczenie:</strong> Lata pracy w branży pozwoliły mi zdobyć wiedzę, która przekłada się na wysoką jakość moich projektów.</li>
-            <li><strong>Indywidualne podejście:</strong> Każdy projekt traktuję jak unikalne wyzwanie, dostosowując rozwiązania do specyficznych potrzeb Twojego biznesu.</li>
-            <li><strong>Efektywność:</strong> Skupiam się na szybkim realizowaniu projektów, jednocześnie dbając o ich jakość i dopracowanie.</li>
-            <li><strong>Wsparcie po realizacji:</strong> Zapewniam pełne wsparcie po wdrożeniu strony, abyś mógł skupić się na rozwijaniu swojego biznesu, a nie na kwestiach technicznych.</li>
-          </ul>
-        </div>
+      <a class="navbar-brand fw-bold" href="#">Jan Jędrusiak</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#">Start</a></li>
+          <li class="nav-item"><a class="nav-link" href="/o-mnie">O mnie</a></li>
+          <li class="nav-item"><a class="nav-link" href="/uslugi">Usługi</a></li>
+          <li class="nav-item"><a class="nav-link" href="/portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        <a href="#contact" class="btn btn-primary ms-3">Skontaktuj się</a>
       </div>
     </div>
+  </nav>
+
+  <!-- Sekcja Hero -->
+  <section class="hero-light d-flex justify-content-center align-items-center text-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold text-dark mb-3">Jan Jędrusiak</h1>
+      <p class="lead text-muted mb-4">Twoja wizja, moje rozwiązania</p>
+      <a href="#o-mnie" class="btn btn-primary btn-lg">Zobacz więcej</a>
+    </div>
   </section>
 
-  <!-- Statystyki -->
-  <section id="stats" class="reveal py-5 text-center bg-light">
+  <!-- O mnie -->
+
+  <section id="o-mnie" class="py-5 text-dark">
     <div class="container">
-      <h2 class="mb-4">Statystyki</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <h3><span data-target="5" class="counter">5</span></h3>
-          <p>Lat doświadczenia</p>
+      <div class="row align-items-center">
+
+        <!-- Zdjęcie / Avatar -->
+        <div class="col-md-5 text-center mb-4 mb-md-0">
+          <img src="/images/image.jpeg" alt="Jan Jędrusiak" class="img-fluid rounded-circle shadow"
+            style="max-width: 250px;">
         </div>
-        <div class="col-md-4">
-          <h3><span data-target="100" class="counter">100</span>%</h3>
-          <p>Dbałości o szczegóły</p>
+
+        <!-- Tekst -->
+        <div class="col-md-7">
+          <h2 class="fw-bold mb-3">Kim jestem?</h2>
+          <p class="lead">
+            Cześć! Nazywam się <strong>Jan Jędrusiak</strong> i tworzę nowoczesne, szybkie i dopracowane strony
+            internetowe. Specjalizuję się w frontendzie, animacjach oraz responsywnych interfejsach dopasowanych do
+            Twojej wizji.
+          </p>
+          <p>
+            Łączę technologię z estetyką, aby tworzyć rozwiązania, które naprawdę robią wrażenie. Zawsze dbam o detale i
+            UX. Twoja wizja? Moje rozwiązanie.
+          </p>
+          <a href="#kontakt" class="btn btn-outline-light mt-3">Skontaktuj się ze mną</a>
         </div>
-        <div class="col-md-4">
-          <h3><span data-target="100" class="counter">100</span>%</h3>
-          <p>Zadowolonych klientów</p>
-        </div>
+
       </div>
     </div>
   </section>
 
   <!-- Usługi -->
-  <section id="services" class="reveal bg-light py-5">
+
+  <section id="uslugi" class="py-5 text-dark">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">Co oferuję?</h2>
+      <p class="lead mb-5">Nowoczesne rozwiązania dopasowane do Twoich potrzeb</p>
+
+      <div class="row g-4">
+
+        <!-- Usługa 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 bg-light rounded-4 shadow-sm h-100">
+            <div class="mb-3">
+              <i class="bi bi-laptop fs-1 text-primary"></i>
+            </div>
+            <h5 class="fw-semibold">Strony internetowe</h5>
+            <p>Projektuję i wdrażam szybkie, responsywne strony oparte na nowoczesnych technologiach webowych.</p>
+          </div>
+        </div>
+
+        <!-- Usługa 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 bg-light rounded-4 shadow-sm h-100">
+            <div class="mb-3">
+              <i class="bi bi-phone fs-1 text-success"></i>
+            </div>
+            <h5 class="fw-semibold">Responsywność</h5>
+            <p>Twoja strona będzie perfekcyjnie wyglądać na każdym urządzeniu – od telefonu po monitor ultrawide.</p>
+          </div>
+        </div>
+
+        <!-- Usługa 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 bg-light rounded-4 shadow-sm h-100">
+            <div class="mb-3">
+              <i class="bi bi-lightning-charge fs-1 text-warning"></i>
+            </div>
+            <h5 class="fw-semibold">Optymalizacja</h5>
+            <p>Poprawiam wydajność i szybkość działania strony — lepsze UX, lepsze SEO, lepsze wyniki.</p>
+          </div>
+        </div>
+
+        <!-- Usługa 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 bg-light rounded-4 shadow-sm h-100">
+            <div class="mb-3">
+              <i class="bi bi-brush fs-1 text-info"></i>
+            </div>
+            <h5 class="fw-semibold">Design & UI</h5>
+            <p>Wdrażam projekty z Figma lub tworzę unikalne layouty dostosowane do Twojej marki i potrzeb.</p>
+          </div>
+        </div>
+
+        <!-- Usługa 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 bg-light rounded-4 shadow-sm h-100">
+            <div class="mb-3">
+              <i class="bi bi-code-slash fs-1 text-danger"></i>
+            </div>
+            <h5 class="fw-semibold">Czysty kod</h5>
+            <p>Tworzę strony oparte na solidnym, semantycznym kodzie – łatwe do utrzymania i skalowania.</p>
+          </div>
+        </div>
+
+        <!-- Usługa 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 bg-light rounded-4 shadow-sm h-100">
+            <div class="mb-3">
+              <i class="bi bi-rocket fs-1 text-dark"></i>
+            </div>
+            <h5 class="fw-semibold">Wdrażanie</h5>
+            <p>Pomagam we wdrożeniu strony na hosting, domenę, podpięciu formularzy, analityki i więcej.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+
+  <section id="portfolio" class="py-5 text-dark">
     <div class="container">
-      <h2 class="text-center mb-4">Jak mogę ci pomóc?</h2>
-      <div class="row">
-        <!-- Kafelek 1 -->
-        <div class="col-md-4">
-          <div class="card text-center">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Moje projekty</h2>
+        <p class="lead">Zobacz wybrane realizacje stron internetowych</p>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Projekt 1 -->
+        <div class="col-md-6 col-lg-6">
+          <div class="card bg-light border-0 shadow h-100">
+            <img src="/images/screen.jpg" class="card-img-top" alt="Projekt 1">
             <div class="card-body">
-              <i class="fas fa-code fa-4x mb-3"></i>
-              <h5 class="card-title">Tworzenie stron internetowych</h5>
-              <p class="card-text">Profesjonalne strony internetowe dostosowane do Twoich potrzeb.</p>
+              <h5 class="card-title">2BSTRONG – Strona trenerska</h5>
+              <p class="card-text">Nowoczesna, responsywna strona dla trenerów personalnych z Krakowa, z animacjami i
+                formularzem kontaktowym.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
+              <a href="https://2bstrong.pl" class="btn btn-outline-dark btn-sm" target="_blank">Zobacz live</a>
             </div>
           </div>
         </div>
-        <!-- Kafelek 2 -->
-        <div class="col-md-4">
-          <div class="card text-center">
+
+        <!-- Projekt 2 -->
+        <div class="col-md-6 col-lg-6">
+          <div class="card bg-light border-0 shadow h-100">
+            <img src="/images/screen2.jpg" class="card-img-top" alt="Projekt 2">
             <div class="card-body">
-              <i class="fas fa-mobile-alt fa-4x mb-3"></i>
-              <h5 class="card-title">Projektowanie responsywnych stron</h5>
-              <p class="card-text">Strony, które doskonale działają na każdym urządzeniu.</p>
+              <h5 class="card-title">Landing Page dla startupu</h5>
+              <p class="card-text">Minimalistyczny i szybki landing dla aplikacji mobilnej, oparty o Bootstrap 5 i
+                animacje scrollowe.</p>
             </div>
-          </div>
-        </div>
-        <!-- Kafelek 3 -->
-        <div class="col-md-4">
-          <div class="card text-center">
-            <div class="card-body">
-              <i class="fas fa-search fa-4x mb-3"></i>
-              <h5 class="card-title">Optymalizacja SEO</h5>
-              <p class="card-text">Poprawa widoczności Twojej strony w wyszukiwarkach internetowych.</p>
+            <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
+              <a href="https://akademiaplus.eu/" class="btn btn-outline-dark btn-sm" target="_blank">Zobacz live</a>
             </div>
           </div>
         </div>
@@ -158,225 +220,188 @@
     </div>
   </section>
 
-  <section id="faq" class="reveal faq-section bg-light">
+  <!-- Współpraca -->
+
+  <section id="wspolpraca" class="py-5 text-dark">
     <div class="container">
-      <h2 class="faq-title">FAQ</h2>
-  
-      <div class="faq-item">
-        <button class="faq-question">Jak długo trwa proces tworzenia strony internetowej?</button>
-        <div class="faq-answer">
-          <p>Czas realizacji zależy od złożoności projektu. Proste strony typu "wizytówka" mogą być gotowe w ciągu kilku dni, natomiast bardziej zaawansowane projekty, takie jak sklepy internetowe czy platformy e-learningowe, mogą zająć kilka tygodni. W trakcie realizacji regularnie informuję o postępach.</p>
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Jak wygląda współpraca?</h2>
+        <p class="lead">Przejrzysty i szybki proces w 5 krokach</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Krok 1 -->
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="p-4 bg-light rounded-4 shadow-sm text-center h-100">
+            <div class="mb-3">
+              <span class="badge bg-primary rounded-pill fs-5">1</span>
+            </div>
+            <h5 class="fw-semibold">Kontakt i analiza potrzeb</h5>
+            <p>Rozmawiamy o Twoich oczekiwaniach i celach. Doradzam najlepsze rozwiązania.</p>
+          </div>
+        </div>
+
+        <!-- Krok 2 -->
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="p-4 bg-light rounded-4 shadow-sm text-center h-100">
+            <div class="mb-3">
+              <span class="badge bg-primary rounded-pill fs-5">2</span>
+            </div>
+            <h5 class="fw-semibold">Wycenienie i umowa</h5>
+            <p>Przygotowuję jasną wycenę i ustalamy terminy. Po akceptacji zaczynam pracę.</p>
+          </div>
+        </div>
+
+        <!-- Krok 3 -->
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="p-4 bg-light rounded-4 shadow-sm text-center h-100">
+            <div class="mb-3">
+              <span class="badge bg-primary rounded-pill fs-5">3</span>
+            </div>
+            <h5 class="fw-semibold">Projekt graficzny / layout</h5>
+            <p>Tworzę design lub pracuję na Twoim — konsultuję go z Tobą i nanoszę poprawki.</p>
+          </div>
+        </div>
+
+        <!-- Krok 4 -->
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="p-4 bg-light rounded-4 shadow-sm text-center h-100">
+            <div class="mb-3">
+              <span class="badge bg-primary rounded-pill fs-5">4</span>
+            </div>
+            <h5 class="fw-semibold">Kodowanie i optymalizacja</h5>
+            <p>Wdrażam stronę z dbałością o responsywność, wydajność i SEO.</p>
+          </div>
+        </div>
+
+        <!-- Krok 5 -->
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="p-4 bg-light rounded-4 shadow-sm text-center h-100">
+            <div class="mb-3">
+              <span class="badge bg-primary rounded-pill fs-5">5</span>
+            </div>
+            <h5 class="fw-semibold">Publikacja i wsparcie</h5>
+            <p>Wdrażam stronę na serwer lub pomagam Ci to zrobić. Oferuję wsparcie po zakończeniu projektu.</p>
+          </div>
         </div>
       </div>
-  
-      <div class="faq-item">
-        <button class="faq-question">Czy pomagasz z domeną i hostingiem?</button>
-        <div class="faq-answer">
-          <p>Tak, mogę doradzić w wyborze odpowiedniej domeny i hostingu w zależności od Twoich potrzeb. Pomagam również w ich konfiguracji, tak aby strona była szybko i bezproblemowo dostępna online. Dodatkowo mogę zasugerować rozwiązania zapewniające bezpieczeństwo i szybkość działania witryny.</p>
-        </div>
-      </div>
-  
-      <div class="faq-item">
-        <button class="faq-question">Czy mogę samodzielnie zarządzać stroną po jej wykonaniu?</button>
-        <div class="faq-answer">
-          <p>Oczywiście! Tworzę strony oparte na intuicyjnych systemach zarządzania treścią (CMS), które również sam tworzę. Dzięki temu możesz łatwo edytować treści, dodawać zdjęcia, aktualizować informacje czy tworzyć nowe podstrony, nawet jeśli nie masz doświadczenia w programowaniu.</p>
-        </div>
-      </div>
-  
-      <div class="faq-item">
-        <button class="faq-question">Czy oferujesz wsparcie techniczne po wykonaniu strony?</button>
-        <div class="faq-answer">
-          <p>Tak, zapewniam wsparcie techniczne po zakończeniu projektu. Obejmuje to pomoc w rozwiązywaniu problemów technicznych, drobne poprawki oraz doradztwo dotyczące dalszego rozwoju witryny. W razie potrzeby oferuję również usługi długoterminowego utrzymania strony.</p>
-        </div>
-      </div>
-  
-      <div class="faq-item">
-        <button class="faq-question">Jakie informacje są potrzebne, aby rozpocząć projekt?</button>
-        <div class="faq-answer">
-          <p>Aby rozpocząć projekt, potrzebuję kilku kluczowych informacji, takich jak cel strony, grupa docelowa, preferowany styl graficzny oraz funkcjonalności, które strona powinna posiadać. Im więcej szczegółów, tym lepiej mogę dostosować stronę do Twoich potrzeb.</p>
-        </div>
-      </div>
-  
-      <div class="faq-item">
-        <button class="faq-question">Czy mogę zmienić wygląd strony po jej wykonaniu?</button>
-        <div class="faq-answer">
-          <p>Tak, strona może być edytowana i dostosowywana nawet po jej wykonaniu. W przypadku stron zbudowanych na CMS, możesz łatwo zmieniać kolory, zdjęcia czy układ treści. Jeśli potrzebujesz większych zmian, mogę je dla Ciebie wprowadzić.</p>
-        </div>
-      </div>
-  
-      <div class="faq-item">
-        <button class="faq-question">Czy strona będzie dostosowana do urządzeń mobilnych?</button>
-        <div class="faq-answer">
-          <p>Tak, każda strona, którą tworzę, jest w pełni responsywna, co oznacza, że będzie wyglądać i działać doskonale na komputerach, tabletach oraz smartfonach. W dzisiejszych czasach jest to absolutny standard, aby zapewnić użytkownikom jak najlepsze doświadczenia.</p>
-        </div>
-      </div>
-  
     </div>
   </section>
-    
+
+  <!-- Opinie -->
+
+  <section id="opinie" class="py-5 text-dark">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Co mówią moi klienci</h2>
+        <p class="lead">Prawdziwe opinie od osób, z którymi miałem przyjemność współpracować</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Opinia 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="bg-light rounded-4 p-4 shadow h-100">
+            <p class="fst-italic">"Przyszedłem do Jana bez żadnej wiedzy na temat stron. Jan pomógł mi ustalić cel
+              strony, zaproponował czytelną strukturę i sfinalizował zlecenie tworząc przejrzystą i wygodną w obsłudze
+              stronę internetową. Wszystko o co pytałem tłumaczył w sposób prosty a za razem klarowny. Polecam gorąco
+              usługi Jana."</p>
+            <hr class="my-3">
+            <h6 class="mb-0 fw-semibold">Bartłomiej</h6>
+            <small class="text-muted">Trener personalny</small>
+          </div>
+        </div>
+
+        <!-- Opinia 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="bg-light rounded-4 p-4 shadow h-100">
+            <p class="fst-italic">"Nie znam się na stronach, ale potrzebowałem czegoś prostego, co pokaże moją firmę w
+              internecie. Jan wszystko mi wytłumaczył, zrobił stronę dokładnie tak, jak chciałem i pomógł ją potem
+              uruchomić. Działa na telefonie i wygląda nowocześnie. Klienci mówią, że łatwo się po niej poruszać. Bardzo
+              dziękuję"</p>
+            <hr class="my-3">
+            <h6 class="mb-0 fw-semibold">Tomasz</h6>
+            <small class="text-muted">Prezes firmy remontowo-budowlanej</small>
+          </div>
+        </div>
+
+        <!-- Opinia 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="bg-light rounded-4 p-4 shadow h-100">
+            <p class="fst-italic">"Potrzebowałem prostej strony z cennikiem i możliwością kontaktu. Jan zrobił wszystko
+              szybko i bez zbędnych gadek. Strona wygląda profesjonalnie, a znajomi mówią, że w końcu mam porządną
+              wizytówkę w sieci. Polecam, konkretny gość."</p>
+            <hr class="my-3">
+            <h6 class="mb-0 fw-semibold">Michał</h6>
+            <small class="text-muted">Barber</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Kontakt -->
-<!-- Dodaj link do Bootstrap 5 w <head> dokumentu -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Formularz kontaktowy w Bootstrap 5 -->
-  <div class="container mt-4 mb-4">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-          <h2 class="text-center mb-4">Skontaktuj się ze mną</h2>
+  <section id="kontakt" class="text-dark py-5">
+    <div class="container mt-4 mb-4">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h2 class="fw-bold mb-4">Poproś o indywidualną wycenę</h2>
           <form action="https://formspree.io/f/xovjgoap" method="POST">
-            
+
             <div class="mb-3">
               <label for="name" class="form-label">Imię i nazwisko</label>
-              <input type="text" class="form-control" id="name" name="name" required>
+              <input type="text" class="form-control bg-light text-dark border-0 shadow-sm" id="name" name="name"
+                required>
             </div>
-  
+
             <div class="mb-3">
               <label for="email" class="form-label">Adres e-mail</label>
-              <input type="email" class="form-control" id="email" name="email" required>
+              <input type="email" class="form-control bg-light text-dark border-0 shadow-sm" id="email" name="email"
+                required>
             </div>
-  
+
             <div class="mb-3">
               <label for="phone" class="form-label">Numer telefonu (opcjonalnie)</label>
-              <input type="tel" class="form-control" id="phone" name="phone">
+              <input type="tel" class="form-control bg-light text-dark border-0 shadow-sm" id="phone" name="phone">
             </div>
-  
+
             <div class="mb-3">
               <label for="contact_method" class="form-label">Preferowany sposób kontaktu</label>
-              <select class="form-select" id="contact_method" name="contact_method" required>
+              <select class="form-select bg-light text-dark border-0 shadow-sm" id="contact_method"
+                name="contact_method" required>
                 <option value="email">E-mail</option>
                 <option value="phone">Telefon</option>
               </select>
             </div>
-  
+
             <div class="mb-3">
               <label for="message" class="form-label">Treść wiadomości</label>
-              <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+              <textarea class="form-control bg-light text-dark border-0 shadow-sm" id="message" name="message"
+                rows="4"></textarea>
             </div>
-  
+
             <button type="submit" class="btn btn-primary w-100">Wyślij wiadomość</button>
-  
           </form>
+        </div>
       </div>
     </div>
-  </div>
-  
-  <!-- Bootstrap JS (opcjonalnie, jeśli potrzebujesz interaktywności) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-  
+  </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-3">
+  <!-- Stopka -->
+
+  <footer class="text-dark py-4">
     <div class="container text-center">
-      <p>&copy; 2025 Jan Jędrusiak | Wszelkie prawa zastrzeżone.</p>
+      <p class="mb-1">&copy; 2025 Jan Jędrusiak. Wszelkie prawa zastrzeżone.</p>
+      <p class="mb-0">
+        <a href="#contact" class="text-dark text-decoration-none me-3">Kontakt</a>
+        <!-- <a href="#faq" class="text-dark text-decoration-none me-3">FAQ</a> -->
+        <a href="https://www.linkedin.com/in/janjedrusiak" target="_blank" rel="noopener"
+          class="text-dark text-decoration-none">LinkedIn</a>
+      </p>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // 🔢 Liczniki animowane
-      const counters = document.querySelectorAll(".counter");
-    
-      counters.forEach((counter) => {
-        counter.innerText = "0";
-    
-        const updateCounter = () => {
-          const target = +counter.getAttribute("data-target");
-          const current = +counter.innerText;
-          const increment = target / 200;
-    
-          if (current < target) {
-            counter.innerText = `${Math.ceil(current + increment)}`;
-            setTimeout(updateCounter, 10);
-          } else {
-            counter.innerText = target;
-          }
-        };
-    
-        // Uruchamiamy licznik, gdy element jest widoczny
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              updateCounter();
-              observer.disconnect();
-            }
-          });
-        });
-    
-        observer.observe(counter);
-      });
-    
-      // 🍔 Menu nawigacyjne (dla wersji mobilnej)
-      const menuIcon = document.getElementById("menu-icon");
-      const navLinks = document.getElementById("nav-links");
-    
-      menuIcon.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
-    
-      navLinks.addEventListener("click", (event) => {
-        if (event.target.tagName === "A") {
-          navLinks.classList.remove("active");
-        }
-      });
-    
-      // 👀 Efekt pojawiania się elementów przy przewijaniu
-      const reveals = document.querySelectorAll(".reveal");
-    
-      const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        const revealPoint = 100;
-    
-        reveals.forEach((reveal) => {
-          const revealTop = reveal.getBoundingClientRect().top;
-    
-          if (revealTop < windowHeight - revealPoint) {
-            reveal.classList.add("active");
-          }
-        });
-      };
-    
-      window.addEventListener("scroll", revealOnScroll);
-      revealOnScroll(); // Sprawdzenie na starcie
-    
-      // ❓ FAQ - rozwijane pytania z animacją
-      const faqItems = document.querySelectorAll(".faq-item");
-    
-      faqItems.forEach((item) => {
-        const question = item.querySelector(".faq-question");
-        const answer = item.querySelector(".faq-answer");
-    
-        // Ukrywamy odpowiedzi na starcie
-        answer.style.maxHeight = "0";
-        answer.style.overflow = "hidden";
-        answer.style.transition = "max-height 0.3s ease-out";
-    
-        question.addEventListener("click", () => {
-          // Zamykamy wszystkie inne odpowiedzi
-          faqItems.forEach((otherItem) => {
-            if (otherItem !== item) {
-              const otherAnswer = otherItem.querySelector(".faq-answer");
-              otherAnswer.style.maxHeight = "0";
-              otherItem.classList.remove("active");
-            }
-          });
-    
-          // Przełączamy aktywną odpowiedź
-          if (item.classList.contains("active")) {
-            answer.style.maxHeight = "0";
-            item.classList.remove("active");
-          } else {
-            answer.style.maxHeight = answer.scrollHeight + "px"; // Animacja rozwijania
-            item.classList.add("active");
-          }
-        });
-      });
-    });
-    
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
