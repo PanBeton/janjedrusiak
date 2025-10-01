@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <!-- Google tag -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-C50L89WB3J"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-C50L89WB3J");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jan Jędrusiak - Front-end Developer</title>
+    <meta
+      name="title"
+      content="Profesjonalne Strony Internetowe - Jan Jędrusiak"
+    />
+    <meta
+      name="description"
+      content="Tworzę profesjonalne strony internetowe dostosowane do Twoich potrzeb. Skontaktuj się, by stworzyć swoją stronę internetową!"
+    />
+    <meta
+      name="keywords"
+      content="strony internetowe, projektowanie stron, frontend, web development, usługi internetowe, freelancer, Kraków, Jan Jędrusiak"
+    />
+    <meta name="author" content="Jan Jędrusiak" />
+    <!-- META OG -->
+    <meta
+      property="og:title"
+      content="Profesjonalne Strony Internetowe - Jan Jędrusiak"
+    />
+    <meta
+      property="og:description"
+      content="Tworzę profesjonalne strony internetowe dostosowane do Twoich potrzeb. Skontaktuj się, by stworzyć swoją stronę internetową!"
+    />
+    <meta property="og:image" content="/fav.jpg" />
+    <!-- META-->
+    <meta property="og:site_name" content="Jan Jędrusiak" />
+    <meta property="og:type" content="website" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="56">
+    <!-- Navbar - responsywny, lepki (sticky) -->
+    <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+      <div class="container">
+        <!-- Nazwa Brandu -->
+        <a class="navbar-brand fw-bold text-lg" href="#home">
+          Jan Jędrusiak
+          <i data-lucide="gem" class="text-blue-600 inline-block w-6 h-6"></i>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span style="font-size: 1.5rem"><i data-lucide="menu"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto text-sm">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Start</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#o-mnie">O mnie</a>
+            </li>
+            <li class="nav-item">
+              <!-- 'Usługi' kierują do sekcji Filozofia/Stack -->
+              <a class="nav-link" href="#about">Usługi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="parallax-hero" id="home">
+      <!-- Canvas dla dynamicznych cząsteczek -->
+      <canvas id="particleCanvas" class="particles"></canvas>
+
+      <div class="container text-center relative z-10 p-4">
+        <p
+          class="text-blue-600 font-semibold uppercase tracking-widest text-sm mb-3 reveal-element"
+        >
+          FRONT-END DEVELOPER
+        </p>
+        <h1
+          class="text-5xl md:text-7xl lg:text-8xl font-extrabold text-gray-900 leading-tight reveal-element"
+          data-delay="100"
+        >
+          JAN JĘDRUSIAK<br />
+          <span class="text-blue-600">Twoja Wizja,</span> Moje Rozwiązania.
+        </h1>
+        <p
+          class="text-lg md:text-xl text-gray-600 mt-5 mb-8 reveal-element"
+          data-delay="200"
+        >
+          Tworzenie skalowalnych rozwiązań cyfrowych, które działają tak samo
+          dobrze, jak wyglądają.
+        </p>
+        <a
+          href="#portfolio"
+          class="btn btn-modern px-8 py-3 rounded-full uppercase font-bold reveal-element"
+          data-delay="300"
+        >
+          Zobacz Projekty
+          <i data-lucide="arrow-right" class="inline-block w-5 h-5 ml-2"></i>
+        </a>
+      </div>
+    </header>
+
+    <section class="py-16 md:py-24 bg-gray-50" id="o-mnie">
+      <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <div class="reveal-element">
+            <div class="profile-image-container mb-6 lg:mb-0 max-w-sm mx-auto">
+              <img
+                src="/images/image.jpeg"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x400/2563EB/ffffff?text=JJ';"
+                alt="Jan Jędrusiak - Zdjęcie Profilowe"
+                class="profile-image"
+              />
+            </div>
+          </div>
+
+          <div class="reveal-element" data-delay="100">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6">
+              Kim <span class="text-blue-600">Jestem?</span>
+            </h2>
+            <p class="text-lg text-gray-700 mb-6">
+              Cześć! Nazywam się
+              <strong class="font-bold text-gray-900">Jan Jędrusiak</strong> i
+              tworzę nowoczesne, szybkie i dopracowane strony internetowe.
+              Specjalizuję się w frontendzie, animacjach oraz responsywnych
+              interfejsach dopasowanych do Twojej wizji.
+            </p>
+            <p
+              class="text-lg text-gray-700 mb-6 border-l-4 border-blue-600 pl-4 bg-blue-50 p-4 rounded-md"
+            >
+              Łączę technologię z estetyką, aby tworzyć rozwiązania, które
+              naprawdę robią wrażenie. Zawsze dbam o detale i UX.
+            </p>
+            <a
+              href="#contact"
+              class="btn btn-modern px-6 py-3 rounded-full uppercase font-bold text-sm mt-4"
+            >
+              Napisz do Mnie
+              <i data-lucide="mail" class="inline-block w-4 h-4 ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-24" id="about">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2
+            class="text-4xl md:text-5xl font-extrabold text-center mb-12 reveal-element"
+          >
+            Moja <span class="text-blue-600">Filozofia</span>
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div
+              class="p-6 bg-white rounded-xl shadow-lg project-card reveal-element"
+            >
+              <i
+                data-lucide="code"
+                class="text-blue-600 w-10 h-10 mx-auto mb-4"
+              ></i>
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">
+                Czysty Kod
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Przejrzystość, testowalność i wysoka wydajność to fundament
+                każdej mojej linii kodu.
+              </p>
+            </div>
+            <div
+              class="p-6 bg-white rounded-xl shadow-lg project-card reveal-element"
+              data-delay="100"
+            >
+              <i
+                data-lucide="layout-grid"
+                class="text-blue-600 w-10 h-10 mx-auto mb-4"
+              ></i>
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">
+                Adaptive Design
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Projektowanie z myślą o użytkowniku, niezależnie od urządzenia,
+                z którego korzysta.
+              </p>
+            </div>
+            <div
+              class="p-6 bg-white rounded-xl shadow-lg project-card reveal-element"
+              data-delay="200"
+            >
+              <i
+                data-lucide="zap"
+                class="text-blue-600 w-10 h-10 mx-auto mb-4"
+              ></i>
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">
+                Innowacja
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Nieustanne poszukiwanie i wdrażanie najnowszych, przełomowych
+                technologii.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-gray-50" id="skills">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-center mb-12 reveal-element"
+        >
+          Kluczowy <span class="text-blue-600">Stack</span>
+        </h2>
+        <div class="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+          <div
+            class="p-4 bg-white text-center rounded-lg shadow-md hover:shadow-lg hover:bg-gray-100 transition duration-300 reveal-element"
+          >
+            <i data-lucide="box" class="text-blue-600 w-8 h-8 mx-auto mb-2"></i>
+            <p class="text-sm font-medium text-gray-800">HTML5/CSS3</p>
+          </div>
+          <div
+            class="p-4 bg-white text-center rounded-lg shadow-md hover:shadow-lg hover:bg-gray-100 transition duration-300 reveal-element"
+            data-delay="50"
+          >
+            <i
+              data-lucide="code"
+              class="text-blue-600 w-8 h-8 mx-auto mb-2"
+            ></i>
+            <p class="text-sm font-medium text-gray-800">JavaScript (ES6)</p>
+          </div>
+          <div
+            class="p-4 bg-white text-center rounded-lg shadow-md hover:shadow-lg hover:bg-gray-100 transition duration-300 reveal-element"
+            data-delay="100"
+          >
+            <i
+              data-lucide="square"
+              class="text-blue-600 w-8 h-8 mx-auto mb-2"
+            ></i>
+            <p class="text-sm font-medium text-gray-800">React.js</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-24" id="portfolio">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-center mb-12 reveal-element"
+        >
+          Ostatnie <span class="text-blue-600">Realizacje</span>
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <!-- Projekt 1 -->
+          <div class="project-card reveal-element">
+            <img
+              src="/images/screen.jpg"
+              class="w-full h-48 object-cover border-b border-gray-200"
+              alt="2BStrong"
+            />
+            <div class="p-5">
+              <span
+                class="text-xs font-semibold text-yellow-600 bg-yellow-100 px-3 py-1 rounded-full mb-2 inline-block"
+                >FRONT-END</span
+              >
+              <span
+                class="text-xs font-semibold text-orange-600 bg-orange-100 px-3 py-1 rounded-full mb-2 inline-block"
+                >CMS</span
+              >
+              <span
+                class="text-xs font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full mb-2 inline-block"
+                >DESIGN / MOBILE</span
+              >
+              <h3 class="text-xl font-bold text-gray-900 mt-2">
+                2BStrong - Strona trenerska
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Nowoczesna, responsywna strona dla trenerów personalnych z
+                Krakowa, z animacjami i formularzem kontaktowym.
+              </p>
+              <a href="https://2bstrong.pl/" target="_blank">
+                <button
+                  type="button"
+                  class="mt-4 text-blue-600 hover:text-blue-800 transition duration-200 text-sm font-medium"
+                >
+                  Zobacz live
+                  <i
+                    data-lucide="external-link"
+                    class="inline-block w-4 h-4 ml-1"
+                  ></i>
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="project-card reveal-element" data-delay="100">
+            <img
+              src="/images/screen2.jpg"
+              class="w-full h-48 object-cover border-b border-gray-200"
+              alt="Akademia Plus"
+            />
+            <div class="p-5">
+              <span
+                class="text-xs font-semibold text-yellow-600 bg-yellow-100 px-3 py-1 rounded-full mb-2 inline-block"
+                >FRONT-END</span
+              >
+              <span
+                class="text-xs font-semibold text-orange-600 bg-orange-100 px-3 py-1 rounded-full mb-2 inline-block"
+                >CMS</span
+              >
+              <span
+                class="text-xs font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full mb-2 inline-block"
+                >DESIGN / MOBILE</span
+              >
+              <h3 class="text-xl font-bold text-gray-900 mt-2">
+                Akademia Plus- Strona szkoły jazdy
+              </h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Minimalistyczny i szybki landing dla krakowksiej szkoły jazdy,
+                oparty o Bootstrap 5 i animacje scrollowe.
+              </p>
+              <!-- TUTAJ WPISZ LINKI I TYTUŁY DLA PROJEKTU 2 -->
+              <a href="https://akademiaplus.eu/" target="_blank">
+                <button
+                  type="button"
+                  class="mt-4 text-blue-600 hover:text-blue-800 transition duration-200 text-sm font-medium"
+                >
+                  Zobacz live
+                  <i
+                    data-lucide="external-link"
+                    class="inline-block w-4 h-4 ml-1"
+                  ></i>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-gray-50" id="contact">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-center mb-12 reveal-element"
+        >
+          Poproś o <span class="text-blue-600">indywidualną wycenę</span>
+        </h2>
+        <div class="row justify-content-center">
+          <!-- Zmniejszenie szerokości na lg do col-lg-6 dla lepszej estetyki -->
+          <div class="col-lg-6 col-md-8">
+            <!-- Karta dla Formularza (ulepszony design i cień) -->
+            <div
+              class="bg-white p-8 md:p-12 rounded-xl contact-card reveal-element"
+            >
+              <!-- Opis/Instrukcja nad formularzem -->
+              <p class="text-gray-600 mb-6 text-center md:text-left">
+                Opisz swój projekt – im więcej szczegółów, tym lepiej.
+                Skontaktuję się z Tobą w ciągu 24 godzin.
+              </p>
+
+              <!-- Formularz z labelami -->
+              <form action="https://formspree.io/f/xovjgoap" method="POST">
+                <div class="row g-4">
+                  <div class="col-12">
+                    <label
+                      for="name"
+                      class="form-label font-medium text-gray-700 mb-2"
+                      >Imię i nazwisko</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control h-12"
+                      id="name"
+                      name="name"
+                      required
+                    />
+                  </div>
+
+                  <div class="col-12">
+                    <label
+                      for="email"
+                      class="form-label font-medium text-gray-700 mb-2"
+                      >Adres e-mail</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control h-12"
+                      id="email"
+                      name="email"
+                      required
+                    />
+                  </div>
+
+                  <div class="col-12">
+                    <label
+                      for="phone"
+                      class="form-label font-medium text-gray-700 mb-2"
+                      >Numer telefonu (opcjonalnie)</label
+                    >
+                    <input
+                      type="tel"
+                      class="form-control h-12"
+                      id="phone"
+                      name="phone"
+                    />
+                  </div>
+
+                  <div class="col-12">
+                    <label
+                      for="contact_method"
+                      class="form-label font-medium text-gray-700 mb-2"
+                      >Preferowany sposób kontaktu</label
+                    >
+                    <select
+                      class="form-select h-12"
+                      id="contact_method"
+                      name="contact_method"
+                      required
+                    >
+                      <option value="" disabled selected>Wybierz opcję</option>
+                      <option value="email">E-mail</option>
+                      <option value="phone">Telefon</option>
+                      <option value="meeting">
+                        Spotkanie (online/osobiste)
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label
+                      for="message"
+                      class="form-label font-medium text-gray-700 mb-2"
+                      >Treść wiadomości / Opis projektu</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="message"
+                      name="message"
+                      rows="5"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div class="col-12 text-center">
+                    <button
+                      type="submit"
+                      class="btn btn-modern w-full px-8 py-3 rounded-full uppercase font-bold mt-4"
+                    >
+                      Wyślij wiadomość
+                      <i
+                        data-lucide="send"
+                        class="inline-block w-5 h-5 ml-2"
+                      ></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex justify-center space-x-6 mt-16 reveal-element"
+          data-delay="100"
+        >
+          <a
+            href="https://www.facebook.com/p/Jan-J%C4%99drusiak-Front-end-Developer-61555726413206/"
+            class="text-gray-500 hover:text-blue-600 transition duration-300"
+            target="_blank"
+            ><i data-lucide="facebook" class="w-6 h-6"></i
+          ></a>
+          <a
+            href="https://instagram.com/_jaaano_/"
+            class="text-gray-500 hover:text-blue-600 transition duration-300"
+            target="_blank"
+            ><i data-lucide="instagram" class="w-6 h-6"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-100 border-t border-gray-200">
+      <div class="container mx-auto text-center text-gray-500 text-sm">
+        <p class="mb-0">
+          &copy; 2024 Jan Jędrusiak. Wszystkie Prawa Zastrzeżone.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Inicjalizacja ikon Lucide
+        lucide.createIcons();
+
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+              behavior: "smooth",
+            });
+          });
+        });
+
+        const projectModal = document.getElementById("projectModal");
+        if (projectModal) {
+          projectModal.addEventListener("show.bs.modal", function (event) {
+            // Przycisk, który uruchomił modal
+            const button = event.relatedTarget;
+
+            const url = button.getAttribute("data-project-url");
+            const title = button.getAttribute("data-project-title");
+
+            const modalTitle = projectModal.querySelector("#modalProjectTitle");
+            const modalLink = projectModal.querySelector("#modalProjectLink");
+            const modalLabel = projectModal.querySelector(".modal-title");
+
+            if (title) {
+              modalTitle.textContent = title;
+              modalLabel.textContent = `Szczegóły Projektu: ${title}`;
+            }
+            if (url) {
+              modalLink.setAttribute("href", url);
+              modalLink.classList.remove("d-none");
+            } else {
+              modalLink.classList.add("d-none");
+            }
+          });
+        }
+
+        const revealElements = document.querySelectorAll(".reveal-element");
+
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const delay = parseInt(entry.target.dataset.delay) || 0;
+                setTimeout(() => {
+                  entry.target.classList.add("is-visible");
+                }, delay);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            rootMargin: "0px",
+            threshold: 0.1, // Wystarczy 10% elementu
+          }
+        );
+
+        revealElements.forEach((element) => {
+          observer.observe(element);
+        });
+
+        const heroSection = document.getElementById("home");
+
+        // Jeśli element istnieje
+        if (heroSection) {
+          window.addEventListener("scroll", function () {
+            const scrolled = window.scrollY;
+            // Mnożnik 0.2 dla subtelnego ruchu
+            heroSection.style.setProperty("--scroll-y", scrolled);
+          });
+        }
+
+        const canvas = document.getElementById("particleCanvas");
+        // Sprawdzenie, czy canvas i heroSection istnieją przed próbą ich użycia
+        if (!canvas || !heroSection) return;
+
+        const ctx = canvas.getContext("2d");
+        let particles = [];
+        const particleCount = 60;
+
+        function resizeCanvas() {
+          canvas.width = heroSection.clientWidth;
+          canvas.height = heroSection.clientHeight;
+          initParticles();
+        }
+
+        class Particle {
+          constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 2 + 0.5;
+            this.speedX = Math.random() * 0.5 - 0.25;
+            this.speedY = Math.random() * 0.5 - 0.25;
+            // Bardzo subtelne niebieskie kropki
+            this.color =
+              "rgba(37, 99, 235, " + (Math.random() * 0.3 + 0.2) + ")";
+          }
+          update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.x < 0) this.x = canvas.width;
+            if (this.x > canvas.width) this.x = 0;
+            if (this.y < 0) this.y = canvas.height;
+            if (this.y > canvas.height) this.y = 0;
+          }
+          draw() {
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+
+        function initParticles() {
+          particles = [];
+          for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+          }
+        }
+
+        function handleParticles() {
+          for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+          }
+        }
+
+        function animateParticles() {
+          // Lekkie cieniowanie (dla jasnego tła używamy białego, aby stworzyć efekt "śladu")
+          ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          handleParticles();
+          requestAnimationFrame(animateParticles);
+        }
+
+        // Start animacji cząsteczek
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+        animateParticles();
+      });
+    </script>
+  </body>
+</html>
