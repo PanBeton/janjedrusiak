@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jan Jędrusiak | Front-end Developer</title>
     <link rel="icon" type="image/x-icon" href="images/fav.jpg">
-    <!-- Ładowanie Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Ładowanie Lucide Icons (dla minimalistycznych ikon) -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Ustawienia globalne i font */
@@ -157,35 +155,31 @@
 
 <body>
 
-    <!-- 1. Nagłówek i Nawigacja (Stałe na górze) -->
     <header id="main-header"
         class="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-none md:bg-white/95 md:shadow-md md:backdrop-blur-sm">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold accent-color">
+            <a href="/" class="text-2xl font-bold accent-color">
                 <img src="images/logonobg.png" alt="Logo, Jan Jędrusiak - Front-end Developer" width="50px">
             </a>
             <div class="hidden md:flex space-x-8 font-medium">
-                <a href="/o-mnie" class="nav-link">O Mnie</a>
-                <a href="/umiejetnosci" class="nav-link">Umiejętności</a>
-                <a href="/projekty" class="nav-link">Projekty</a>
-                <a href="/kontakt" class="nav-link">Kontakt</a>
+                <a href="#o-mnie" class="nav-link">O Mnie</a>
+                <a href="#umiejetnosci" class="nav-link">Umiejętności</a>
+                <a href="#projekty" class="nav-link">Projekty</a>
+                <a href="#kontakt" class="nav-link">Kontakt</a>
             </div>
-            <!-- Ikona menu dla urządzeń mobilnych -->
             <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition">
                 <i data-lucide="menu" class="w-6 h-6 text-gray-700"></i>
             </button>
         </nav>
-        <!-- Menu Mobilne (ukryte domyślnie) -->
         <div id="mobile-menu" class="md:hidden hidden absolute w-full bg-white border-t border-gray-200 shadow-lg">
-            <a href="/o-mnie" class="block py-3 px-6 text-gray-700 hover:bg-gray-50 nav-link">O Mnie</a>
-            <a href="/umiejetnosci" class="block py-3 px-6 text-gray-700 hover:bg-gray-50 nav-link">Umiejętności</a>
-            <a href="/projekty" class="block py-3 px-6 text-gray-700 hover:bg-gray-50 nav-link">Projekty</a>
-            <a href="/kontakt" class="block py-3 px-6 text-gray-700 hover:bg-gray-50 nav-link">Kontakt</a>
+            <a href="#o-mnie" class="block py-3 px-6 text-gray-700 hover:bg-gray-50 nav-link">O Mnie</a>
+            <a href="#umiejetnosci" class="block py-3 px-6 text-gray-700 hover:bg-gray-50 nav-link">Umiejętności</a>
+            <a href="#projekty" class="block py-3 px-6 text-gray-700 hover:bg-gray-50 nav-link">Projekty</a>
+            <a href="#kontakt" class="block py-3 px-6 text-gray-700 hover:bg-gray-50 nav-link">Kontakt</a>
         </div>
     </header>
 
     <main>
-        <!-- 2. Sekcja Główna (Hero) - Zaktualizowany tekst -->
         <section id="hero" class="modern-hero-bg">
             <div id="hero-text" class="text-center p-8 max-w-4xl mx-auto">
                 <p class="text-xl md:text-2xl text-teal-400 font-semibold mb-2 animate-on-scroll">
@@ -206,7 +200,6 @@
             </div>
         </section>
 
-        <!-- 3. Sekcja O Mnie (About Me) - Zaktualizowany tekst -->
         <section id="o-mnie" class="py-24 bg-white">
             <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div class="animate-on-scroll">
@@ -225,18 +218,15 @@
                     </p>
                 </div>
                 <div class="animate-on-scroll delay-150">
-                    <!-- Placeholder na minimalistyczne zdjęcie/awatar -->
                     <div
                         class="bg-gray-100 h-96 rounded-2xl shadow-xl flex items-center justify-center border-4 border-gray-200">
                         <i data-lucide="user" class="w-16 h-16 accent-color"></i>
-                        <!-- <span class="absolute text-sm text-gray-400 mt-24">Minimalistyczny portret / Awatar</span> -->
                         <img src="images/image.jpeg" alt="">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Sekcja Umiejętności (Tech Stack) -->
         <section id="umiejetnosci" class="py-24 bg-gray-50">
             <div class="max-w-7xl mx-auto px-6 text-center">
                 <h2 class="text-4xl font-bold mb-16 animate-on-scroll">
@@ -245,7 +235,6 @@
 
                 <div class="grid md:grid-cols-3 gap-10 text-left">
 
-                    <!-- Kolumna 1: Kodowanie i Języki -->
                     <div class="animate-on-scroll p-8 bg-white rounded-xl shadow-xl border-t-4 border-teal-500">
                         <div class="flex items-center mb-6">
                             <i data-lucide="code-square" class="w-8 h-8 accent-color mr-3"></i>
@@ -278,7 +267,6 @@
                         </ul>
                     </div>
 
-                    <!-- Kolumna 2: Styl i Design -->
                     <div
                         class="animate-on-scroll delay-150 p-8 bg-white rounded-xl shadow-xl border-t-4 border-teal-500">
                         <div class="flex items-center mb-6">
@@ -310,7 +298,6 @@
                         </ul>
                     </div>
 
-                    <!-- Kolumna 3: Narzędzia i Dane -->
                     <div
                         class="animate-on-scroll delay-300 p-8 bg-white rounded-xl shadow-xl border-t-4 border-teal-500">
                         <div class="flex items-center mb-6">
@@ -348,14 +335,12 @@
             </div>
         </section>
 
-        <!-- 5. Sekcja Projekty (Portfolio) -->
         <section id="projekty" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-4xl font-bold mb-16 text-center animate-on-scroll">
                     Wybrane <span class="accent-color">Projekty</span>
                 </h2>
 
-                <!-- Projekt 1 -->
                 <div
                     class="animate-on-scroll grid md:grid-cols-2 gap-8 mb-16 items-center border-b pb-8 border-gray-100">
                     <div>
@@ -372,19 +357,14 @@
                             Zobacz projekt <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
                         </a>
                     </div>
-                    <!-- Placeholder na zrzut ekranu -->
                     <div class="bg-gray-100 h-64 rounded-xl shadow-lg flex items-center justify-center">
-                        <!-- <span class="text-gray-400">Podgląd Projektu 1</span> -->
                         <img src="images/screen.jpg" alt="2BStrong - Strona trenerska" width="100%">
                     </div>
                 </div>
 
-                <!-- Projekt 2 -->
                 <div
                     class="animate-on-scroll delay-150 grid md:grid-cols-2 gap-8 mb-16 items-center border-b pb-8 border-gray-100">
-                    <!-- Placeholder na zrzut ekranu -->
                     <div class="bg-gray-100 h-64 rounded-xl shadow-lg flex items-center justify-center md:order-2">
-                        <!-- <span class="text-gray-400">Podgląd Projektu 2</span> -->
                         <img src="images/screen2.jpg" alt="Akademia Plus -Strona szkoły jazdy" width="100%">
                     </div>
                     <div class="md:order-1">
@@ -403,7 +383,6 @@
                     </div>
                 </div>
 
-                <!-- Projekt 3 -->
                 <div class="animate-on-scroll delay-300 grid md:grid-cols-2 gap-8 items-center">
                     <div>
                         <h3 class="text-3xl font-semibold mb-3">Wkrótce...</h3>
@@ -418,7 +397,6 @@
                             Zobacz projekt <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
                         </a>
                     </div>
-                    <!-- Placeholder na zrzut ekranu -->
                     <div class="bg-gray-100 h-64 rounded-xl shadow-lg flex items-center justify-center">
                         <span class="text-gray-400">Wkrótce...</span>
                     </div>
@@ -427,7 +405,6 @@
             </div>
         </section>
 
-        <!-- 6. Sekcja Kontakt (CTA) z FORMULARZEM -->
         <section id="kontakt" class="py-24 bg-gray-50">
             <div class="max-w-4xl mx-auto px-6">
                 <h2 class="text-4xl font-bold mb-12 text-center animate-on-scroll">
@@ -437,7 +414,6 @@
                 <div
                     class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100 animate-on-scroll delay-150">
                     <form action="https://formspree.io/f/xovjgoap" method="POST" class="space-y-6">
-                        <!-- Pola formularza -->
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Imię i Nazwisko /
                                 Nazwa Firmy</label>
@@ -459,7 +435,6 @@
                                 placeholder="Np. 'Potrzebuję strony wizytówki opartej na czystym JS, termin za 4 tygodnie.'"></textarea>
                         </div>
 
-                        <!-- Przycisk Wysyłki -->
                         <div class="pt-4 flex justify-center">
                             <button type="submit" class="w-half button-50">
                                 Wyślij Wiadomość
@@ -478,7 +453,6 @@
 
     </main>
 
-    <!-- 7. Stopka -->
     <footer class="py-12 bg-gray-950 text-gray-400">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="flex justify-center space-x-6 mb-6">
@@ -497,7 +471,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript dla paralaksy, animacji i nawigacji -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const mainHeader = document.getElementById('main-header');
@@ -525,14 +498,6 @@
             }
             window.addEventListener('scroll', handleHeaderScroll);
             handleHeaderScroll(); // Uruchomienie przy starcie
-
-            // Obsługa przewijania do sekcji bez przeładowania strony
-            const sectionMap = {
-                "o-nas": "o-nas",
-                "umiejetnosci": "umiejetnosci",
-                "projekty": "projekty",
-                "kontakt": "kontakt",
-            };
 
             // ----------------------------------------------------
             // 2. Obsługa Menu Mobilnego
@@ -595,6 +560,70 @@
                 }
                 observer.observe(element);
             });
+
+
+            // ----------------------------------------------------
+            // 5. Obsługa Czystych URL-i i Nawigacji SPA (NOWY KOD)
+            // ----------------------------------------------------
+
+            // Mapa: ID sekcji (hash) -> Czysty URL (path)
+            const sectionPathMap = {
+                'o-mnie': '/o-mnie',
+                'umiejetnosci': '/umiejetnosci',
+                'projekty': '/projekty',
+                'kontakt': '/kontakt',
+                'hero': '/' // Dodatkowe mapowanie dla sekcji głównej (logo)
+            };
+
+            // Przechwytywanie kliknięć na linki nawigacyjne (teraz z hashem)
+            // Obejmuje też przycisk "Zobacz projekty" z sekcji Hero
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Natywne przewijanie do sekcji działa dzięki href="#id" i scroll-behavior: smooth
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetPath = sectionPathMap[targetId];
+
+                    if (targetPath) {
+                        // Zmień URL w pasku adresu bez przeładowywania strony
+                        // Używamy pushState, aby wpisy w historii przeglądarki działały (back/forward)
+                        history.pushState(null, '', targetPath);
+                    }
+                });
+            });
+
+            // Obsługa wejścia na stronę z przyjaznym URL-em (np. /o-mnie)
+            function scrollToSectionFromPath() {
+                const currentPath = window.location.pathname;
+                const headerHeight = mainHeader.offsetHeight;
+                let targetId = null;
+
+                // Szukamy ID sekcji pasującego do aktualnej ścieżki
+                for (const id in sectionPathMap) {
+                    if (sectionPathMap[id] === currentPath) {
+                        targetId = id;
+                        break;
+                    }
+                }
+
+                if (targetId && targetId !== 'hero') {
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        // Mały timeout, aby upewnić się, że renderowanie Tailwind zostało zakończone
+                        setTimeout(() => {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - headerHeight,
+                                // Przy pierwszym ładowaniu przewijamy natychmiast, aby uniknąć błysku
+                                behavior: 'auto'
+                            });
+                        }, 100);
+                    }
+                }
+            }
+
+            // Wywołaj przy pierwszym ładowaniu (obsługa bezpośrednich linków np. /o-mnie)
+            scrollToSectionFromPath();
+
         });
     </script>
 </body>
