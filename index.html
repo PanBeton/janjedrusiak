@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +13,13 @@
     <style>
         /* Ustawienia globalne i font */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f9fafb; /* Bardzo jasny, subtelny kolor tła */
-            color: #1f2937; /* Ciemna szarość dla tekstu */
+            background-color: #f9fafb;
+            /* Bardzo jasny, subtelny kolor tła */
+            color: #1f2937;
+            /* Ciemna szarość dla tekstu */
             scroll-behavior: smooth;
         }
 
@@ -28,8 +32,9 @@
             /* Subtelny ciemny gradient promieniowy - czysty, nowoczesny look */
             background: radial-gradient(circle at center, #1f2937 0%, #111827 80%, #0c1017 100%);
             position: relative;
-            overflow: hidden; 
+            overflow: hidden;
         }
+
         /* Użycie pseudoelementu do dodania subtelnej siatki w tle */
         .modern-hero-bg::before {
             content: '';
@@ -38,13 +43,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(255, 255, 255, 0.03),
-                rgba(255, 255, 255, 0.03) 1px,
-                transparent 1px,
-                transparent 50px
-            );
+            background: repeating-linear-gradient(45deg,
+                    rgba(255, 255, 255, 0.03),
+                    rgba(255, 255, 255, 0.03) 1px,
+                    transparent 1px,
+                    transparent 50px);
             opacity: 0.5;
             z-index: 1;
         }
@@ -52,14 +55,18 @@
         /* Efekt paralaksy nałożony na główny tekst */
         #hero-text {
             position: relative;
-            z-index: 10; /* Nad pseudoelementem tła */
-            transition: transform 0.1s ease-out; /* Płynne przejście dla transformacji JS */
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Lżejszy cień */
+            z-index: 10;
+            /* Nad pseudoelementem tła */
+            transition: transform 0.1s ease-out;
+            /* Płynne przejście dla transformacji JS */
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            /* Lżejszy cień */
         }
-        
+
         /* Korekta nagłówka dla lepszej czytelności i uderzenia */
         #hero-text h1 {
-             letter-spacing: -0.05em; /* Lepszy, ścisły wygląd */
+            letter-spacing: -0.05em;
+            /* Lepszy, ścisły wygląd */
         }
 
         /* Style dla animacji 'fade-in-up' (Intersection Observer) */
@@ -76,81 +83,86 @@
 
         /* Stylizacja akcentowa */
         .accent-color {
-            color: #0d9488; /* Ciemny turkus */
+            color: #0d9488;
+            /* Ciemny turkus */
         }
+
         .accent-bg {
             background-color: #0d9488;
         }
-    
-/* CSS */
-.button-50 {
-  appearance: button;
-  background-color: #2dd4bf;
-  background-image: none;
-  border: 1px solid #000;
-  border-radius: 4px;
-  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  margin: 0 5px 10px 0;
-  overflow: visible;
-  padding: 12px 40px;
-  text-align: center;
-  text-transform: none;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-}
 
-.button-50:focus {
-  text-decoration: none;
-}
+        /* CSS */
+        .button-50 {
+            appearance: button;
+            background-color: #2dd4bf;
+            background-image: none;
+            border: 1px solid #000;
+            border-radius: 4px;
+            box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            margin: 0 5px 10px 0;
+            overflow: visible;
+            padding: 12px 40px;
+            text-align: center;
+            text-transform: none;
+            touch-action: manipulation;
+            user-select: none;
+            -webkit-user-select: none;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
 
-.button-50:hover {
-  text-decoration: none;
-}
+        .button-50:focus {
+            text-decoration: none;
+        }
 
-.button-50:active {
-  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
-  outline: 0;
-}
+        .button-50:hover {
+            text-decoration: none;
+        }
 
-.button-50:not([disabled]):active {
-  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
-  transform: translate(2px, 2px);
-}
+        .button-50:active {
+            box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+            outline: 0;
+        }
 
-@media (min-width: 768px) {
-  .button-50 {
-    padding: 12px 50px;
-  }
-}
+        .button-50:not([disabled]):active {
+            box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+            transform: translate(2px, 2px);
+        }
+
+        @media (min-width: 768px) {
+            .button-50 {
+                padding: 12px 50px;
+            }
+        }
 
         /* Styl dla tła nagłówka z przeźroczystością */
         header {
             transition: background-color 0.3s ease-in-out;
         }
+
         .scrolled-header {
             background-color: rgba(255, 255, 255, 0.95);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
+
 <body>
 
     <!-- 1. Nagłówek i Nawigacja (Stałe na górze) -->
-    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-none md:bg-white/95 md:shadow-md md:backdrop-blur-sm">
+    <header id="main-header"
+        class="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-none md:bg-white/95 md:shadow-md md:backdrop-blur-sm">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#hero" class="text-2xl font-bold accent-color">
-              <img src="images/logonobg.png" alt="Logo, Jan Jędrusiak - Front-end Developer" width="50px">
+                <img src="images/logonobg.png" alt="Logo, Jan Jędrusiak - Front-end Developer" width="50px">
             </a>
             <div class="hidden md:flex space-x-8 font-medium">
                 <a href="/o-mnie" class="nav-link">O Mnie</a>
@@ -183,7 +195,8 @@
                     JAN JĘDRUSIAK
                 </h1>
                 <p class="text-lg md:text-2xl text-gray-300 font-light mt-4 animate-on-scroll delay-100">
-                    Twoja Wizja, Moje Rozwiązania. Tworzę skalowalne rozwiązania cyfrowe, które działają tak samo dobrze, jak wyglądają.
+                    Twoja Wizja, Moje Rozwiązania. Tworzę skalowalne rozwiązania cyfrowe, które działają tak samo
+                    dobrze, jak wyglądają.
                 </p>
                 <div class="mt-10 animate-on-scroll delay-200">
                     <a href="#projekty" class="button-50">
@@ -201,18 +214,23 @@
                         <span class="accent-color">Kim Jestem?</span>
                     </h2>
                     <p class="text-lg text-gray-600 leading-relaxed mb-4">
-                        Cześć! Nazywam się <span class="font-bold text-gray-900">Jan Jędrusiak</span> i tworzę nowoczesne, szybkie i dopracowane strony internetowe. Specjalizuję się w frontendzie, animacjach oraz responsywnych interfejsach dopasowanych do Twojej wizji.
+                        Cześć! Nazywam się <span class="font-bold text-gray-900">Jan Jędrusiak</span> i tworzę
+                        nowoczesne, szybkie i dopracowane strony internetowe. Specjalizuję się w frontendzie, animacjach
+                        oraz responsywnych interfejsach dopasowanych do Twojej wizji.
                     </p>
                     <p class="text-lg text-gray-600 leading-relaxed">
-                        Łączę technologię z estetyką, aby tworzyć rozwiązania, które naprawdę robią wrażenie. Zawsze dbam o detale i UX, co przekłada się na wysoką jakość i wydajność końcowego produktu. Porozmawiajmy o Twoim kolejnym projekcie!
+                        Łączę technologię z estetyką, aby tworzyć rozwiązania, które naprawdę robią wrażenie. Zawsze
+                        dbam o detale i UX, co przekłada się na wysoką jakość i wydajność końcowego produktu.
+                        Porozmawiajmy o Twoim kolejnym projekcie!
                     </p>
                 </div>
                 <div class="animate-on-scroll delay-150">
                     <!-- Placeholder na minimalistyczne zdjęcie/awatar -->
-                    <div class="bg-gray-100 h-96 rounded-2xl shadow-xl flex items-center justify-center border-4 border-gray-200">
+                    <div
+                        class="bg-gray-100 h-96 rounded-2xl shadow-xl flex items-center justify-center border-4 border-gray-200">
                         <i data-lucide="user" class="w-16 h-16 accent-color"></i>
                         <!-- <span class="absolute text-sm text-gray-400 mt-24">Minimalistyczny portret / Awatar</span> -->
-                         <img src="images/image.jpeg" alt="">
+                        <img src="images/image.jpeg" alt="">
                     </div>
                 </div>
             </div>
@@ -238,14 +256,16 @@
                                 <i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mr-3 shrink-0 mt-1"></i>
                                 <div>
                                     <span class="font-semibold text-gray-900">JavaScript (ES6+)</span>
-                                    <p class="text-sm text-gray-600">Znajomość nowoczesnego JS, asynchroniczności, manipulacji DOM.</p>
+                                    <p class="text-sm text-gray-600">Znajomość nowoczesnego JS, asynchroniczności,
+                                        manipulacji DOM.</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
                                 <i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mr-3 shrink-0 mt-1"></i>
                                 <div>
                                     <span class="font-semibold text-gray-900">TypeScript</span>
-                                    <p class="text-sm text-gray-600">Opanowanie typowania, które zwiększa stabilność dużych aplikacji.</p>
+                                    <p class="text-sm text-gray-600">Opanowanie typowania, które zwiększa stabilność
+                                        dużych aplikacji.</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
@@ -257,9 +277,10 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <!-- Kolumna 2: Styl i Design -->
-                    <div class="animate-on-scroll delay-150 p-8 bg-white rounded-xl shadow-xl border-t-4 border-teal-500">
+                    <div
+                        class="animate-on-scroll delay-150 p-8 bg-white rounded-xl shadow-xl border-t-4 border-teal-500">
                         <div class="flex items-center mb-6">
                             <i data-lucide="paintbrush" class="w-8 h-8 accent-color mr-3"></i>
                             <h3 class="text-2xl font-bold">Design i Estetyka</h3>
@@ -290,7 +311,8 @@
                     </div>
 
                     <!-- Kolumna 3: Narzędzia i Dane -->
-                    <div class="animate-on-scroll delay-300 p-8 bg-white rounded-xl shadow-xl border-t-4 border-teal-500">
+                    <div
+                        class="animate-on-scroll delay-300 p-8 bg-white rounded-xl shadow-xl border-t-4 border-teal-500">
                         <div class="flex items-center mb-6">
                             <i data-lucide="settings" class="w-8 h-8 accent-color mr-3"></i>
                             <h3 class="text-2xl font-bold">Narzędzia i Back-end</h3>
@@ -300,14 +322,16 @@
                                 <i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mr-3 shrink-0 mt-1"></i>
                                 <div>
                                     <span class="font-semibold text-gray-900">Git / GitHub</span>
-                                    <p class="text-sm text-gray-600">Zaawansowana praca zespołowa, branchowanie i code review.</p>
+                                    <p class="text-sm text-gray-600">Zaawansowana praca zespołowa, branchowanie i code
+                                        review.</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
                                 <i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mr-3 shrink-0 mt-1"></i>
                                 <div>
                                     <span class="font-semibold text-gray-900">SQL / NoSQL</span>
-                                    <p class="text-sm text-gray-600">Skuteczne zarządzanie danymi i tworzenie zapytań.</p>
+                                    <p class="text-sm text-gray-600">Skuteczne zarządzanie danymi i tworzenie zapytań.
+                                    </p>
                                 </div>
                             </li>
                             <li class="flex items-start">
@@ -332,42 +356,48 @@
                 </h2>
 
                 <!-- Projekt 1 -->
-                <div class="animate-on-scroll grid md:grid-cols-2 gap-8 mb-16 items-center border-b pb-8 border-gray-100">
+                <div
+                    class="animate-on-scroll grid md:grid-cols-2 gap-8 mb-16 items-center border-b pb-8 border-gray-100">
                     <div>
                         <h3 class="text-3xl font-semibold mb-3">2BStrong - Strona trenerska</h3>
                         <p class="text-gray-600 mb-4">
-                            Nowoczesna, responsywna strona dla trenerów personalnych z Krakowa, z animacjami i formularzem kontaktowym.     
+                            Nowoczesna, responsywna strona dla trenerów personalnych z Krakowa, z animacjami i
+                            formularzem kontaktowym.
                         </p>
                         <p class="text-sm font-medium accent-color mb-4">
                             Technologie: Bootstrap, JavaScript, HTML5, CSS3
                         </p>
-                        <a href="https://2bstrong.pl/" target="_blank" class="text-gray-900 font-medium hover:accent-color transition duration-200 inline-flex items-center">
+                        <a href="https://2bstrong.pl/" target="_blank"
+                            class="text-gray-900 font-medium hover:accent-color transition duration-200 inline-flex items-center">
                             Zobacz projekt <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
                         </a>
                     </div>
                     <!-- Placeholder na zrzut ekranu -->
                     <div class="bg-gray-100 h-64 rounded-xl shadow-lg flex items-center justify-center">
                         <!-- <span class="text-gray-400">Podgląd Projektu 1</span> -->
-                         <img src="images/screen.jpg" alt="2BStrong - Strona trenerska" width="100%">
+                        <img src="images/screen.jpg" alt="2BStrong - Strona trenerska" width="100%">
                     </div>
                 </div>
 
                 <!-- Projekt 2 -->
-                <div class="animate-on-scroll delay-150 grid md:grid-cols-2 gap-8 mb-16 items-center border-b pb-8 border-gray-100">
+                <div
+                    class="animate-on-scroll delay-150 grid md:grid-cols-2 gap-8 mb-16 items-center border-b pb-8 border-gray-100">
                     <!-- Placeholder na zrzut ekranu -->
                     <div class="bg-gray-100 h-64 rounded-xl shadow-lg flex items-center justify-center md:order-2">
                         <!-- <span class="text-gray-400">Podgląd Projektu 2</span> -->
-                         <img src="images/screen2.jpg" alt="Akademia Plus -Strona szkoły jazdy" width="100%">
+                        <img src="images/screen2.jpg" alt="Akademia Plus -Strona szkoły jazdy" width="100%">
                     </div>
                     <div class="md:order-1">
                         <h3 class="text-3xl font-semibold mb-3">Akademia Plus- Strona szkoły jazdy</h3>
                         <p class="text-gray-600 mb-4">
-                            Minimalistyczny i szybki landing dla krakowksiej szkoły jazdy, oparty o Bootstrap 5 i animacje scrollowe.
+                            Minimalistyczny i szybki landing dla krakowksiej szkoły jazdy, oparty o Bootstrap 5 i
+                            animacje scrollowe.
                         </p>
                         <p class="text-sm font-medium accent-color mb-4">
                             Technologie: HTML5, CSS3, JavaScript
                         </p>
-                        <a href="https://akademiaplus.eu." target="_blank" class="text-gray-900 font-medium hover:accent-color transition duration-200 inline-flex items-center">
+                        <a href="https://akademiaplus.eu." target="_blank"
+                            class="text-gray-900 font-medium hover:accent-color transition duration-200 inline-flex items-center">
                             Zobacz projekt <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
                         </a>
                     </div>
@@ -383,7 +413,8 @@
                         <p class="text-sm font-medium accent-color mb-4">
                             Technologie: ...
                         </p>
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="text-gray-900 font-medium hover:accent-color transition duration-200 inline-flex items-center">
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+                            class="text-gray-900 font-medium hover:accent-color transition duration-200 inline-flex items-center">
                             Zobacz projekt <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
                         </a>
                     </div>
@@ -403,11 +434,13 @@
                     Zacznijmy <span class="accent-color">Współpracę!</span>
                 </h2>
 
-                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100 animate-on-scroll delay-150">
+                <div
+                    class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100 animate-on-scroll delay-150">
                     <form action="https://formspree.io/f/xovjgoap" method="POST" class="space-y-6">
                         <!-- Pola formularza -->
                         <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Imię i Nazwisko / Nazwa Firmy</label>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Imię i Nazwisko /
+                                Nazwa Firmy</label>
                             <input type="text" id="name" name="name" required
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition duration-150"
                                 placeholder="Wpisz swoje imię lub nazwę firmy">
@@ -419,7 +452,8 @@
                                 placeholder="nazwa@email.pl">
                         </div>
                         <div>
-                            <label for="project" class="block text-sm font-medium text-gray-700 mb-2">Opisz Twój Projekt (Budżet, Czas, Cel)</label>
+                            <label for="project" class="block text-sm font-medium text-gray-700 mb-2">Opisz Twój Projekt
+                                (Budżet, Czas, Cel)</label>
                             <textarea id="project" name="project" rows="5" required
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition duration-150"
                                 placeholder="Np. 'Potrzebuję strony wizytówki opartej na czystym JS, termin za 4 tygodnie.'"></textarea>
@@ -433,9 +467,10 @@
                         </div>
 
                     </form>
-                    
+
                     <p class="text-center text-sm text-gray-500 mt-6">
-                        Odpisuję zazwyczaj w ciągu 24 godzin. <br> Możesz też skontaktować się bezpośrednio: <span class="accent-color font-medium">jedrusiakjan07@gmail.com</span>
+                        Odpisuję zazwyczaj w ciągu 24 godzin. <br> Możesz też skontaktować się bezpośrednio: <span
+                            class="accent-color font-medium">jedrusiakjan07@gmail.com</span>
                     </p>
                 </div>
             </div>
@@ -447,8 +482,11 @@
     <footer class="py-12 bg-gray-950 text-gray-400">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="flex justify-center space-x-6 mb-6">
-                <a href="https://www.facebook.com/p/Jan-J%C4%99drusiak-Front-end-Developer-61555726413206/" target="_blank" class="hover:text-teal-500 transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
-                <a href="https://www.instagram.com/_jaaano_/" target="_blank" class="hover:text-teal-500 transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                <a href="https://www.facebook.com/p/Jan-J%C4%99drusiak-Front-end-Developer-61555726413206/"
+                    target="_blank" class="hover:text-teal-500 transition"><i data-lucide="facebook"
+                        class="w-6 h-6"></i></a>
+                <a href="https://www.instagram.com/_jaaano_/" target="_blank" class="hover:text-teal-500 transition"><i
+                        data-lucide="instagram" class="w-6 h-6"></i></a>
             </div>
             <p class="text-sm">
                 &copy; <span id="current-year">2025</span> Jan Jędrusiak. Wszelkie prawa zastrzeżone.
@@ -473,7 +511,7 @@
             // ----------------------------------------------------
             lucide.createIcons();
             document.getElementById('current-year').textContent = new Date().getFullYear();
-            
+
             // Efekt przejrzystego nagłówka (transparentny na górze, pojawia się po scrollu)
             function handleHeaderScroll() {
                 if (window.scrollY > 50) {
@@ -488,6 +526,14 @@
             window.addEventListener('scroll', handleHeaderScroll);
             handleHeaderScroll(); // Uruchomienie przy starcie
 
+            // Obsługa przewijania do sekcji bez przeładowania strony
+            const sectionMap = {
+                "o-nas": "o-nas",
+                "umiejetnosci": "umiejetnosci",
+                "projekty": "projekty",
+                "kontakt": "kontakt",
+            };
+
             // ----------------------------------------------------
             // 2. Obsługa Menu Mobilnego
             // ----------------------------------------------------
@@ -495,9 +541,9 @@
                 mobileMenu.classList.toggle('hidden');
                 const icon = mobileMenuButton.querySelector('i');
                 icon.setAttribute('data-lucide', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
-                lucide.createIcons(); 
+                lucide.createIcons();
             });
-            
+
             // Ukrywanie menu po kliknięciu linku
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
@@ -519,7 +565,7 @@
             }
 
             window.addEventListener('scroll', handleParallax);
-            
+
             // ----------------------------------------------------
             // 4. Animacje Elementów (Intersection Observer)
             // ----------------------------------------------------
@@ -552,4 +598,5 @@
         });
     </script>
 </body>
+
 </html>
