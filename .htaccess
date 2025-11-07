@@ -1,29 +1,15 @@
-```apache
-
-RewriteEngine On
-RewriteBase /
-
-RewriteRule ^(carstore|detailing)\.html$ /$1 [R=301,L,NC]
-
-RewriteRule ^(O-Mnie|Umiejętności|Projekty|Kontakt)$ index.html [L,NC]
-
-RewriteRule ^(carstore|detailing)$ $1.html [L,NC]
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-
-RewriteRule . index.html [L]
-
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
   
-  # 1. Nie przepisuj, jeśli zasób jest fizycznym plikiem (np. .jpg, .css, .html)
-  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !^/index\.html$ [NC]
+
+  RewriteRule ^(carstore|detailing)$ $1.html [L,NC]
   
-  # 2. Nie przepisuj, jeśli zasób jest fizycznym katalogiem
+  RewriteRule ^(carstore|detailing)\.html$ /$1 [R=301,L,NC]
+  
+  RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   
-  # 3. Dla wszystkich innych ścieżek (SPA), załaduj index.html
   RewriteRule . /index.html [L]
 </IfModule>
