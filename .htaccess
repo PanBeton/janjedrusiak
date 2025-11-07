@@ -11,4 +11,19 @@ RewriteRule ^(carstore|detailing)$ $1.html [L,NC]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+
 RewriteRule . index.html [L]
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # 1. Nie przepisuj, jeśli zasób jest fizycznym plikiem (np. .jpg, .css, .html)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  
+  # 2. Nie przepisuj, jeśli zasób jest fizycznym katalogiem
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+  # 3. Dla wszystkich innych ścieżek (SPA), załaduj index.html
+  RewriteRule . /index.html [L]
+</IfModule>
