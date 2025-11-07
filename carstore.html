@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan Jędrusiak | Autoryzowany Salon Samochodów Premium</title>
+    <meta name="author" content="Jan Jędrusiak">
+    <link rel="icon" type="image/x-icon" href="images/fav.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8yK7WN2f6fV5M4Lz5t7b0n9A7K5K5F5D5B5A5C5B5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0D1421', 
+                        'secondary-dark': '#1A2430', 
+                        'accent': '#0060A0',
+                        'light-text': '#F3F4F6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'slide-in-up': 'slideInUp 1s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-down': 'slideDown 0.3s ease-out',
+                        'slide-up-out': 'slideUpOut 0.3s ease-in forwards',
+                    },
+                    keyframes: {
+                        slideInUp: {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideDown: {
+                            '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideUpOut: {
+                            '0%': { transform: 'translateY(0)', opacity: '1' },
+                            '100%': { transform: 'translateY(-100%)', opacity: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .parallax-hero {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .accent-line {
+            display: inline-block;
+            width: 50px;
+            height: 3px;
+            background-color: #0060A0; 
+            margin-bottom: 1rem;
+        }
+
+        .map-placeholder {
+            height: 400px;
+            background-color: #0D1421;
+            background-image: url('https://placehold.co/800x400/1A2430/FFFFFF?text=Mapa+Lokalizacji+Exus+Krak%C3%B3w');
+            background-size: cover;
+            background-position: center;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+        }
+        
+        #mobile-menu.menu-open {
+            display: block;
+            animation: slide-down 0.3s ease-out;
+        }
+
+        #mobile-menu.menu-closed {
+            animation: slide-up-out 0.3s ease-in forwards;
+        }
+    </style>
+</head>
+<body class="bg-primary-dark text-light-text font-sans">
+
+    <header class="fixed top-0 left-0 w-full z-30 bg-primary-dark/95 backdrop-blur-sm shadow-xl">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-accent tracking-widest font-serif">Exus <span class="text-light-text text-lg tracking-normal">Kraków</span></a>
+            
+            <div class="space-x-8 hidden md:flex">
+                <a href="#oferta" class="hover:text-accent transition duration-300">Modele</a>
+                <a href="#onas" class="hover:text-accent transition duration-300">Filozofia</a>
+                <a href="#uslugi" class="hover:text-accent transition duration-300">Serwis</a>
+                <a href="#kontakt" class="hover:text-accent transition duration-300">Kontakt</a>
+            </div>
+            
+            <a href="#kontakt" class="hidden md:block bg-accent text-primary-dark px-5 py-2 rounded-full font-semibold hover:bg-sky-600 transition duration-300 shadow-lg">Umów Jazdę Testową</a>
+            
+            <button id="nav-toggle" class="md:hidden text-light-text text-xl focus:outline-none p-2 rounded-lg hover:bg-secondary-dark transition duration-200" aria-label="Przełącz nawigację mobilną">
+                <svg id="icon-burger" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <svg id="icon-close" class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </nav>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary-dark/95 border-t border-gray-700 w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                <a href="#oferta" class="block px-3 py-2 rounded-md text-base font-medium text-light-text hover:bg-primary-dark w-full text-center" onclick="closeMobileMenu()">Modele</a>
+                <a href="#onas" class="block px-3 py-2 rounded-md text-base font-medium text-light-text hover:bg-primary-dark w-full text-center" onclick="closeMobileMenu()">Filozofia</a>
+                <a href="#uslugi" class="block px-3 py-2 rounded-md text-base font-medium text-light-text hover:bg-primary-dark w-full text-center" onclick="closeMobileMenu()">Serwis</a>
+                <a href="#kontakt" class="block px-3 py-2 rounded-md text-base font-medium text-light-text hover:bg-primary-dark w-full text-center" onclick="closeMobileMenu()">Kontakt</a>
+                <a href="#kontakt" class="block bg-accent text-primary-dark px-5 py-2 mt-2 rounded-full font-semibold hover:bg-sky-600 transition duration-300 w-3/4 text-center" onclick="closeMobileMenu()">Umów Jazdę Testową</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="parallax-hero relative flex items-center justify-center h-screen text-center overflow-hidden">
+            <div id="hero-content" class="z-10 p-8 rounded-lg animate-fade-in shadow-2xl">
+                <h1 class="text-6xl md:text-8xl font-serif font-extrabold mb-4 text-light-text animate-slide-in-up tracking-tight">
+                    EXUS KRAKÓW
+                </h1>
+                <p class="text-xl md:text-3xl font-light text-light-text mb-8 tracking-widest uppercase animate-slide-in-up delay-100" style="animation-delay: 0.1s;">
+                    Kunszt. Innowacja.
+                </p>
+                <a href="#oferta" class="inline-block bg-accent text-primary-dark text-lg px-8 py-3 rounded-full font-bold uppercase tracking-wider hover:bg-sky-600 transition duration-500 shadow-2xl hover:shadow-accent/50 animate-slide-in-up" style="animation-delay: 0.2s;">
+                    Odkryj Nowe Modele
+                </a>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-primary-dark to-transparent z-10"></div>
+        </section>
+
+        <section id="onas" class="py-24 md:py-32 container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+                <span class="accent-line mx-auto"></span>
+                <h2 class="text-4xl font-serif font-bold mb-6 text-light-text">Filozofia</h2>
+                <p class="text-lg text-gray-400 leading-relaxed">
+                    W Salonie Exus Kraków doświadczysz autentycznej japońskiej gościnności. Dla nas oznacza to przewidywanie Twoich potrzeb i dbałość o każdy, nawet najmniejszy detal. Jesteśmy autoryzowanym partnerem, oferującym pełną gamę pojazdów, w tym pionierskie modele hybrydowe i elektryczne. Od momentu wejścia do salonu, czeka na Ciebie wyjątkowe doświadczenie.
+                </p>
+                <p class="text-base font-semibold text-accent mt-6">
+                    Kunszt Takumi i najwyższa jakość wykonania w każdym modelu.
+                </p>
+            </div>
+        </section>
+
+        <section id="oferta" class="py-24 md:py-32 bg-secondary-dark">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center mb-16 animate-on-scroll">
+                    <span class="accent-line mx-auto"></span>
+                    <h2 class="text-4xl font-serif font-bold text-light-text">Wyselekcjonowane Modele Exus</h2>
+                    <p class="text-lg text-gray-400 mt-4">Poznaj gamę, w której luksus spotyka się z odpowiedzialnością.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="group relative overflow-hidden rounded-xl shadow-2xl animate-on-scroll" style="animation-delay: 0.1s;">
+                        <img src="https://placehold.co/600x400/0D1421/0060A0?text=©+Jan+Jędrusiak.+Wszelkie+prawa+zastrzeżone." alt="Nowe samochody Exus" class="w-full h-72 object-cover transition duration-700 ease-in-out group-hover:scale-110 opacity-70 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-primary-dark/60 flex flex-col justify-end p-6 transition duration-500 group-hover:bg-primary-dark/30">
+                            <h3 class="text-3xl font-serif font-bold text-light-text mb-2">Aktualne Kolekcje</h3>
+                            <p class="text-gray-300 mb-4">Najnowsze technologie, pełna personalizacja i gwarancja.</p>
+                            <a href="#" class="text-accent font-semibold flex items-center transition duration-300 group-hover:text-light-text">
+                                Zobacz SUV-y i Sedany 
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="group relative overflow-hidden rounded-xl shadow-2xl animate-on-scroll" style="animation-delay: 0.2s;">
+                        <img src="https://placehold.co/600x400/0D1421/0060A0?text=Exus+Hybryda" alt="Modele Hybrydowe Exus" class="w-full h-72 object-cover transition duration-700 ease-in-out group-hover:scale-110 opacity-70 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-primary-dark/60 flex flex-col justify-end p-6 transition duration-500 group-hover:bg-primary-dark/30">
+                            <h3 class="text-3xl font-serif font-bold text-light-text mb-2">Hybryda i Electric</h3>
+                            <p class="text-gray-300 mb-4">Pionierzy technologii Self-Charging Hybrid.</p>
+                            <a href="#" class="text-accent font-semibold flex items-center transition duration-300 group-hover:text-light-text">
+                                Poznaj Czystą Moc
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="group relative overflow-hidden rounded-xl shadow-2xl animate-on-scroll" style="animation-delay: 0.3s;">
+                        <img src="https://placehold.co/600x400/0D1421/0060A0?text=Exus+U%C5%BCywany" alt="Używane samochody Exus" class="w-full h-72 object-cover transition duration-700 ease-in-out group-hover:scale-110 opacity-70 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-primary-dark/60 flex flex-col justify-end p-6 transition duration-500 group-hover:bg-primary-dark/30">
+                            <h3 class="text-3xl font-serif font-bold text-light-text mb-2">Certyfikowane Używane</h3>
+                            <p class="text-gray-300 mb-4">Pojazdy z gwarancją jakości Exus Select.</p>
+                            <a href="#" class="text-accent font-semibold flex items-center transition duration-300 group-hover:text-light-text">
+                                Przejrzyj Egzemplarze
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="uslugi" class="py-24 md:py-32 relative overflow-hidden">
+            <div id="service-parallax" class="absolute inset-0 bg-fixed bg-cover bg-center opacity-10" 
+                 style="background-image: url('https://placehold.co/1920x800/1A2430/FFFFFF?text=©+Jan+Jędrusiak.+Wszelkie+prawa+zastrzeżone.');">
+            </div>
+
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-4xl mx-auto text-center mb-16 animate-on-scroll">
+                    <span class="accent-line mx-auto"></span>
+                    <h2 class="text-4xl font-serif font-bold text-light-text">Serwis i Wsparcie Exus</h2>
+                    <p class="text-lg text-gray-400 mt-4">Oferujemy najwyższą jakość obsługi posprzedażowej, zgodną ze standardami.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="text-center p-6 bg-primary-dark/50 rounded-lg backdrop-blur-sm hover:bg-secondary-dark/70 transition duration-500 animate-on-scroll" style="animation-delay: 0.1s;">
+                        <div class="text-accent mb-4 mx-auto">
+                            <i class="fa-solid fa-circle-check fa-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Autoryzowany Serwis</h3>
+                        <p class="text-gray-400">Przeglądy, naprawy gwarancyjne i pogwarancyjne. Certyfikowani technicy Exus.</p>
+                    </div>
+
+                    <div class="text-center p-6 bg-primary-dark/50 rounded-lg backdrop-blur-sm hover:bg-secondary-dark/70 transition duration-500 animate-on-scroll" style="animation-delay: 0.2s;">
+                       <div class="text-accent mb-4 mx-auto">
+                            <i class="fa-solid fa-wallet fa-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Finansowanie Exus</h3>
+                        <p class="text-gray-400">Atrakcyjny Leasing KINTO ONE oraz dedykowane kredyty dla Klientów.</p>
+                    </div>
+
+                    <div class="text-center p-6 bg-primary-dark/50 rounded-lg backdrop-blur-sm hover:bg-secondary-dark/70 transition duration-500 animate-on-scroll" style="animation-delay: 0.3s;">
+                        <div class="text-accent mb-4 mx-auto">
+                            <i class="fa-solid fa-car-rear fa-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Jazdy Testowe</h3>
+                        <p class="text-gray-400">Umów się na jazdę testową wybranym modelem w dogodnym dla Ciebie terminie.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt" class="py-24 md:py-32 container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <div class="animate-on-scroll">
+                    <span class="accent-line"></span>
+                    <h2 class="text-4xl font-serif font-bold mb-8 text-light-text">Skontaktuj się z Zespołem Exus Kraków</h2>
+                    
+                    <p class="text-lg text-gray-400 mb-6">Nasi doradcy są gotowi odpowiedzieć na wszystkie pytania dotyczące oferty, serwisu i finansowania.</p>
+
+                    <div class="space-y-4 mb-10">
+                        <div class="flex items-center text-gray-300">
+                            <i class="fas fa-map-marker-alt text-blue-500 mr-3"></i>
+                            <p>ul. Wodna 7, 30-100 Kraków (Lokalizacja Autoryzowanego Salonu)</p>
+                        </div>
+                        <div class="flex items-center text-gray-300">
+                            <i class="fas fa-envelope text-blue-500 mr-3"></i>
+                            <p>kontakt@exuskrakow.pl</p>
+                        </div>
+                        <div class="flex items-center text-gray-300">
+                            <i class="fas fa-phone-alt text-blue-500 mr-3"></i>
+                            <p>+48 12 987 65 43 (Salon)</p>
+                        </div>
+                    </div>
+
+                    <div class="map-placeholder">
+                    </div>
+                </div>
+
+                <div class="p-8 bg-secondary-dark rounded-xl shadow-2xl animate-on-scroll" style="animation-delay: 0.2s;">
+                    <h3 class="text-3xl font-serif font-bold mb-6 text-accent">Rezerwacja Jazdy Testowej</h3>
+                    <!-- Dodałem funkcję showMessage do obsługi komunikatów -->
+                    <form onsubmit="event.preventDefault(); showMessage('Twoje zgłoszenie zostało przesłane do doradcy Exus. Skontaktujemy się niebawem!', 'success')" class="space-y-4">
+                        <input type="text" placeholder="Imię i Nazwisko" required class="w-full p-3 rounded bg-primary-dark border border-gray-700 focus:border-accent outline-none">
+                        <input type="email" placeholder="Adres E-mail" required class="w-full p-3 rounded bg-primary-dark border border-gray-700 focus:border-accent outline-none">
+                        <input type="tel" placeholder="Preferowany Numer Telefonu" class="w-full p-3 rounded bg-primary-dark border border-gray-700 focus:border-accent outline-none">
+                        <select required class="w-full p-3 rounded bg-primary-dark border border-gray-700 focus:border-accent outline-none appearance-none text-gray-400">
+                            <option value="" disabled selected>Wybierz model (np. NX, RX, ES)</option>
+                            <option value="NX">Exus NX</option>
+                            <option value="RX">Exus RX</option>
+                            <option value="ES">Exus ES</option>
+                            <option value="Inny">Inny / Porada Doradcy</option>
+                        </select>
+                        <button type="submit" class="w-full bg-accent text-primary-dark text-lg px-6 py-3 rounded-full font-bold uppercase tracking-wider hover:bg-sky-600 transition duration-300">
+                            Umów Jazdę Testową
+                        </button>
+                    </form>
+                    <div id="message-box" class="mt-4 text-center p-3 rounded hidden transition duration-300"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="h-64 bg-secondary-dark flex items-center justify-center">
+            <p class="text-xl text-gray-500 font-light tracking-widest animate-on-scroll">THE RELENTLESS PURSUIT OF PERFECTION.</p>
+        </section>
+
+    </main>
+
+    <footer class="bg-primary-dark border-t border-gray-800 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-3xl font-bold text-accent mb-4 font-serif">EXUS KRAKÓW</p>
+            <div class="space-x-6 mb-6 text-gray-400 text-sm">
+                <a href="#" class="hover:text-accent transition duration-300">Polityka Prywatności</a>
+                <a href="#" class="hover:text-accent transition duration-300">Regulamin</a>
+                <a href="#" class="hover:text-accent transition duration-300">Praca w Exus</a>
+            </div>
+            <div class="flex justify-center space-x-6 text-gray-400">
+                <a href="#" class="hover:text-accent transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-3.333 14.5h-2.5v-7.5h2.5v7.5zM9.5 7.5h1.5v-1.5H9.5V7.5zm.75 3h1.5v6H10.25V10.5z"/></svg>
+                </a>
+                <a href="#" class="hover:text-accent transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm-3 15h-2v-6h2v6zm-1-8c-.552 0-1-.448-1-1s.448-1 1-1 1 .448 1 1-.448 1-1 1zm8 8h-2v-4c0-.552-.448-1-1-1s-1 .448-1 1v4h-2v-6c0-1.657 1.343-3 3-3s3 1.343 3 3v4z"/></svg>
+                </a>
+            </div>
+            <p class="mt-8 text-xs text-gray-600">&copy; 2025 Jan Jędrusiak. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Funkcja do przełączania menu mobilnego
+        let menuTimeout = null;
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const iconBurger = document.getElementById('icon-burger');
+            const iconClose = document.getElementById('icon-close');
+            
+            // Jeśli menu jest ukryte (domyślnie lub po animacji zamykania)
+            if (menu.classList.contains('hidden')) {
+                // Pokaż menu natychmiast, a następnie dodaj klasę do animacji
+                menu.classList.remove('hidden', 'menu-closed');
+                menu.classList.add('menu-open');
+                iconBurger.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+            } else {
+                // Uruchom animację zamykania
+                menu.classList.remove('menu-open');
+                menu.classList.add('menu-closed');
+                iconBurger.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                
+                // Ukryj element dopiero po zakończeniu animacji (0.3s)
+                menuTimeout = setTimeout(() => {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('menu-closed');
+                }, 300); 
+            }
+        }
+
+        // Funkcja do zamykania menu po kliknięciu w link
+        function closeMobileMenu() {
+             const menu = document.getElementById('mobile-menu');
+             if (!menu.classList.contains('hidden')) {
+                 toggleMobileMenu();
+             }
+        }
+        
+        // Funkcja Parallax
+        function handleParallax() {
+            const hero = document.getElementById('hero');
+            if (hero) {
+                const scrollPosition = window.scrollY;
+                hero.style.backgroundPositionY = `${scrollPosition * 0.2}px`;
+            }
+        }
+
+        // Funkcja wyświetlania komunikatu
+        function showMessage(text, type) {
+            const box = document.getElementById('message-box');
+            box.innerText = text;
+            box.className = 'mt-4 text-center p-3 rounded transition duration-300 block';
+            if (type === 'success') {
+                box.classList.add('bg-green-600/20', 'text-green-300', 'border', 'border-green-600');
+            } else {
+                box.classList.add('bg-red-600/20', 'text-red-300', 'border', 'border-red-600');
+            }
+            setTimeout(() => {
+                box.classList.add('hidden');
+                box.classList.remove('bg-green-600/20', 'text-green-300', 'border', 'border-green-600', 'bg-red-600/20', 'text-red-300', 'border', 'border-red-600');
+            }, 4000);
+        }
+
+        // Funkcja animacji przewijania
+        function setupScrollAnimations() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 
+            });
+
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // Inicjalizacja po załadowaniu strony
+        window.onload = function () {
+            // Dodanie listenera do przycisku burgera
+            document.getElementById('nav-toggle').addEventListener('click', toggleMobileMenu);
+
+            window.addEventListener('scroll', handleParallax);
+            setupScrollAnimations();
+        };
+
+    </script>
+</body>
+</html>
