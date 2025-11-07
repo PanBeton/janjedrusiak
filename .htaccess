@@ -1,10 +1,14 @@
-# Wymuszanie HTTPS
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+```apache
 
-# Obsługa przyjaznych URL-i dla sekcji
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^(carstore|detailing)\.html$ /$1 [R=301,L,NC]
+
+RewriteRule ^(O-Mnie|Umiejętności|Projekty|Kontakt)$ index.html [L,NC]
+
+RewriteRule ^(carstore|detailing)$ $1.html [L,NC]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(o-mnie|umiejetnosci|projekty|kontakt)/?$ index.html [L,QSA]
-
+RewriteRule . index.html [L]
