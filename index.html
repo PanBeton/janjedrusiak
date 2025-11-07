@@ -531,8 +531,8 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
         const mainHeader = document.getElementById('main-header');
         const heroText = document.getElementById('hero-text');
         const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
@@ -554,12 +554,13 @@
         // Efekt przejrzystego nagłówka (transparentny na górze, pojawia się po scrollu)
         function handleHeaderScroll() {
             if (!mainHeader) return;
+            // Dodano dodatkowe warunki dla kolorów, gdy nagłówek staje się biały
             if (window.scrollY > 50) {
                 mainHeader.classList.add('scrolled-header');
-                mainHeader.querySelectorAll('.nav-link').forEach(link => link.classList.add('text-gray-900'));
+                mainHeader.querySelectorAll('.nav-link').forEach(link => link.classList.add('text-gray-700'));
             } else {
                 mainHeader.classList.remove('scrolled-header');
-                mainHeader.querySelectorAll('.nav-link').forEach(link => link.classList.remove('text-gray-900'));
+                mainHeader.querySelectorAll('.nav-link').forEach(link => link.classList.remove('text-gray-700'));
             }
         }
         window.addEventListener('scroll', handleHeaderScroll);
@@ -580,17 +581,20 @@
                 }
             });
 
-            // Ukrywanie menu po kliknięciu linku
+            // Ukrywanie menu po kliknięciu linku (dodatkowa logika dla linków SPA)
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    const icon = mobileMenuButton.querySelector('i');
-                    if (icon) {
-                        icon.setAttribute('data-lucide', 'menu');
-                        if (typeof lucide !== 'undefined') {
-                            lucide.createIcons();
+                    // Czekaj, aż przewijanie się skończy (lub zrób to od razu, jeśli to link SPA)
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                        const icon = mobileMenuButton.querySelector('i');
+                        if (icon) {
+                            icon.setAttribute('data-lucide', 'menu');
+                            if (typeof lucide !== 'undefined') {
+                                lucide.createIcons();
+                            }
                         }
-                    }
+                    }, 150); // Krótkie opóźnienie
                 });
             });
         }
@@ -602,6 +606,7 @@
         if (heroText) {
             function handleParallax() {
                 const scrollPos = window.scrollY;
+                // Upewnij się, że tekst przesuwa się tylko w dół, a nie w górę (dzięki transformacji na Y)
                 heroText.style.transform = `translateY(${scrollPos * 0.3}px)`;
             }
             window.addEventListener('scroll', handleParallax);
@@ -638,115 +643,96 @@
 
 
         // ----------------------------------------------------
-        // 5. Obsługa Czystych URL-i i Nawigacji (SPA)
+        // 5. Obsługa Czystych URL-i i Nawigacji (SPA - Single Page App)
         // ----------------------------------------------------
 
-        // MAPOWANIE: ŚCIEŻKA URL -> ID SEKCYJNE
+        /**
+         * Ważne MAPOWANIE: ŚCIEŻKA URL -> ID SEKCYJNE
+         * W kodzie HTML ID sekcji to: "hero", "o-mnie", "umiejetnosci", "projekty", "kontakt"
+         */
         const pathSectionMap = {
             '/': 'hero',
-            '/o-mnie': 'O-Mnie', // Użyj dokładnych ID z twojego HTML
-            '/umiejetnosci': 'Umiejętności',
-            '/projekty': 'Projekty',
-            '/kontakt': 'Kontakt'
+            '/o-mnie': 'o-mnie', // Ścieżka URL: /o-mnie -> ID sekcji: o-mnie
+            '/umiejetnosci': 'umiejetnosci',
+            '/projekty': 'projekty',
+            '/kontakt': 'kontakt'
         };
 
-        // Funkcja do przewijania do sekcji
-        function smoothScrollToSection(targetId, behavior = 'smooth') {
+        function smoothScrollToSection(targetId) {
             const targetElement = document.getElementById(targetId);
-            const headerHeight = mainHeader ? mainHeader.offsetHeight : 0;
-            
             if (targetElement) {
-                // Timeout upewnia się, że wszystkie elementy mają ustalone pozycje
-                setTimeout(() => {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - headerHeight,
-                        behavior: behavior 
-                    });
-                }, 100);
-            } else if (targetId === 'hero') {
-                 setTimeout(() => {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: behavior 
-                    });
-                }, 100);
+                // Dostosuj scroll do wysokości nagłówka, aby element nie był nim zakryty
+                const headerHeight = mainHeader ? mainHeader.offsetHeight : 0;
+                // Odejmujemy wysokość nagłówka plus mały margines
+                const targetPosition = targetElement.offsetTop - headerHeight - 10; 
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
             }
         }
 
-        // 5a. Obsługa starych linków z hashem (przekierowanie na nową ścieżkę)
-        (function handleOldHashLinks() {
-            if (window.location.hash) {
-                let hashId = window.location.hash.substring(1);
-                // Normalizacja: O-Mnie, Umiejętności, Projekty, Kontakt
-                let targetPath = null;
+        // 1. Obsługa kliknięć w nawigacji
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const path = link.getAttribute('href');
 
-                // Szukamy pasującej ścieżki w mapie (konieczna iteracja, bo mapa jest odwrócona)
-                for (const path in pathSectionMap) {
-                    if (pathSectionMap[path] === hashId) {
-                        targetPath = path;
-                        break;
-                    }
+                // Pomiń, jeśli link ma target="_blank" (projekty, linki zewnętrzne, itp.)
+                if (link.getAttribute('target') === '_blank') {
+                    return;
                 }
                 
-                if (targetPath) {
-                    // Przekierowanie na nową ścieżkę bez przeładowania
-                    history.replaceState(null, '', targetPath);
-                    // Teraz przewinie do sekcji dzięki funkcji scrollToSectionFromPath()
+                // Sprawdzenie, czy link jest częścią nawigacji SPA
+                if (pathSectionMap[path]) {
+                    e.preventDefault(); // Zablokuj domyślną akcję przeglądarki (przeładowanie)
+                    const targetId = pathSectionMap[path];
+
+                    // Zmień URL i przewiń
+                    history.pushState(null, null, path);
+                    smoothScrollToSection(targetId);
                 }
-            }
-        })();
-
-
-        // 5b. Przechwytywanie kliknięć na nowe linki (href="/path")
-        // Upewnij się, że w HTML linki do sekcji wyglądają tak: <a href="/projekty">
-        document.querySelectorAll('a[href^="/"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                const targetId = pathSectionMap[href];
-
-                if (targetId) {
-                    e.preventDefault(); // Zablokuj domyślną akcję (przeładowanie strony)
-                    
-                    // Zmień URL w pasku adresu (SPA routing)
-                    history.pushState(null, '', href);
-                    
-                    // Przewiń do odpowiedniej sekcji
-                    smoothScrollToSection(targetId, 'smooth');
-
-                    // Jeśli kliknięty link ma ID, przewiń do niego
+                // Obsługa linku do głównej sekcji (np. z logo lub #hero)
+                else if (path === '/') {
+                    e.preventDefault();
+                    history.pushState(null, null, '/');
+                    smoothScrollToSection('hero');
+                }
+                // Obsługa kotwic wewnątrz tej samej strony (np. "Zobacz projekty" z #projekty)
+                else if (path.startsWith('#')) {
+                    e.preventDefault();
+                    smoothScrollToSection(path.substring(1));
                 }
             });
         });
+
+        // 2. Obsługa przycisków WSTECZ/DALEJ w przeglądarce (popstate)
+        window.addEventListener('popstate', () => {
+            const currentPath = window.location.pathname;
+            
+            // Linki SPA (np. /o-mnie)
+            if (pathSectionMap[currentPath]) {
+                smoothScrollToSection(pathSectionMap[currentPath]);
+            }
+            // Link główny (/)
+            else if (currentPath === '/') {
+                 smoothScrollToSection('hero');
+            }
+            // Inne przypadki są ignorowane (jeśli nie jest to sekcja, pozostaje tam, gdzie jest lub przechodzi na górę)
+        });
         
-        // 5c. Obsługa wejścia na stronę z przyjaznym URL-em (np. /o-mnie)
-        function scrollToSectionFromPath() {
-            // Użyj pathname, który jest samą ścieżką (np. /o-mnie)
-            const currentPath = window.location.pathname.toLowerCase(); 
-            let targetId = null;
-
-            // Szukamy ID sekcji pasującego do aktualnej ścieżki
-            // Konieczne jest znormalizowanie kluczy (ścieżek) i wartości (ID sekcji)
-            for (const path in pathSectionMap) {
-                // Porównujemy ścieżki (path) z currentPath
-                if (path.toLowerCase() === currentPath) {
-                    targetId = pathSectionMap[path];
-                    break;
-                }
-            }
-
-            if (targetId) {
-                // Przy pierwszym ładowaniu (lub odświeżeniu) przewijamy natychmiast, aby uniknąć "błysku"
-                smoothScrollToSection(targetId, 'auto'); 
-            }
+        // Inicjalne przewinięcie przy pierwszym ładowaniu lub po odświeżeniu
+        const initialPath = window.location.pathname;
+        if (pathSectionMap[initialPath]) {
+            // Używamy setTimeout(0) lub delay, aby upewnić się, że cała strona została w pełni wyrenderowana,
+            // zanim wykonamy smoothScroll.
+            setTimeout(() => {
+                smoothScrollToSection(pathSectionMap[initialPath]);
+            }, 50); 
         }
 
-        // 5d. Obsługa przycisków wstecz/dalej w przeglądarce
-        window.addEventListener('popstate', scrollToSectionFromPath);
-
-        // Wywołaj przy pierwszym ładowaniu (obsługa bezpośrednich linków np. /o-mnie)
-        scrollToSectionFromPath();
     });
-    </script>
+</script>
 </body>
 
 </html>
