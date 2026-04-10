@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jan Jędrusiak | Front-end Developer</title>
+    <title>Jan Jędrusiak | Front-end Developer</title>
 
-    <meta name="description" content="Tworzenie profesjonalnych, szybkich i responsywnych stron internetowych. Estetyka, perfekcyjny kod front-end. Zobacz portfolio i skontaktuj się ze mną.">
-    
+    <meta name="description"
+        content="Tworzenie profesjonalnych, szybkich i responsywnych stron internetowych. Estetyka, perfekcyjny kod front-end. Zobacz portfolio i skontaktuj się ze mną.">
+
     <meta name="robots" content="index, follow">
 
     <meta http-equiv="Content-Language" content="pl">
-    
+
     <meta name="author" content="Jan Jędrusiak">
-    
+
     <meta property="og:title" content="Jan Jędrusiak - Front-end Developer">
-    <meta property="og:description" content="Tworzenie profesjonalnych, szybkich i responsywnych stron internetowych. Estetyka, perfekcyjny kod front-end. Zobacz portfolio i skontaktuj się ze mną.">
+    <meta property="og:description"
+        content="Tworzenie profesjonalnych, szybkich i responsywnych stron internetowych. Estetyka, perfekcyjny kod front-end. Zobacz portfolio i skontaktuj się ze mną.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://janjedrusiak.pl/">
     <meta property="og:image" content="images/screen-main.jpg">
@@ -386,7 +388,7 @@
                         <img src="images/screen2.jpg" alt="Akademia Plus -Strona szkoły jazdy" width="100%">
                     </div>
                     <div class="md:order-1">
-                        <h3 class="text-3xl font-semibold mb-3">Akademia Plus- Strona szkoły jazdy</h3>
+                        <h3 class="text-3xl font-semibold mb-3">Akademia Plus - Strona szkoły jazdy</h3>
                         <p class="text-gray-600 mb-4">
                             Minimalistyczny i szybki landing dla krakowksiej szkoły jazdy, oparty o Bootstrap 5 i
                             animacje scrollowe.
@@ -395,6 +397,26 @@
                             Technologie: HTML5, CSS3, JavaScript
                         </p>
                         <a href="https://akademiaplus.eu." target="_blank"
+                            class="text-gray-900 font-medium hover:accent-color transition duration-200 inline-flex items-center">
+                            Zobacz projekt <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="animate-on-scroll delay-150 grid md:grid-cols-2 gap-8 mb-16 items-center border-b pb-8 border-gray-100">
+                    <div class="bg-gray-100 h-64 rounded-xl shadow-lg flex items-center justify-center md:order-2">
+                        <img src="images/screen5.jpg" alt="Akademia Plus -Strona szkoły jazdy" width="100%">
+                    </div>
+                    <div class="md:order-1">
+                        <h3 class="text-3xl font-semibold mb-3">wynajemnamiotowlubelskie.pl - Obsługa eventów</h3>
+                        <p class="text-gray-600 mb-4">
+                            Nowoczesny landing dla lubelskiej firmy z branży eventowej, oparty o Bootstrap 5.
+                        </p>
+                        <p class="text-sm font-medium accent-color mb-4">
+                            Technologie: Bootstrap, CSS3, JavaScript
+                        </p>
+                        <a href="https://wynajemnamiotowlubelskie.pl" target="_blank"
                             class="text-gray-900 font-medium hover:accent-color transition duration-200 inline-flex items-center">
                             Zobacz projekt <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
                         </a>
@@ -419,7 +441,7 @@
                         <span class="text-gray-400">Wkrótce...</span>
                     </div>
                 </div>
-                
+
                 <h2 class="text-4xl font-bold mt-16 mb-16 text-center animate-on-scroll">
                     Przykładowe <span class="accent-color">Projekty</span>
                 </h2>
@@ -635,182 +657,182 @@
         </div>
     </footer>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const mainHeader = document.getElementById('main-header');
-        const heroText = document.getElementById('hero-text');
-        const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainHeader = document.getElementById('main-header');
+            const heroText = document.getElementById('hero-text');
+            const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
 
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
-        const currentYearElement = document.getElementById('current-year');
-        if (currentYearElement) {
-            currentYearElement.textContent = new Date().getFullYear();
-        }
-
-
-        function handleHeaderScroll() {
-            if (!mainHeader) return;
-
-            if (window.scrollY > 50) {
-                mainHeader.classList.add('scrolled-header');
-                mainHeader.querySelectorAll('.nav-link').forEach(link => link.classList.add('text-gray-700'));
-            } else {
-                mainHeader.classList.remove('scrolled-header');
-                mainHeader.querySelectorAll('.nav-link').forEach(link => link.classList.remove('text-gray-700'));
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
             }
-        }
-        window.addEventListener('scroll', handleHeaderScroll);
-        handleHeaderScroll(); // Uruchomienie przy starcie
+            const currentYearElement = document.getElementById('current-year');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
 
 
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                const icon = mobileMenuButton.querySelector('i');
-                if (icon) {
-                    icon.setAttribute('data-lucide', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
-                    if (typeof lucide !== 'undefined') {
-                        lucide.createIcons();
-                    }
+            function handleHeaderScroll() {
+                if (!mainHeader) return;
+
+                if (window.scrollY > 50) {
+                    mainHeader.classList.add('scrolled-header');
+                    mainHeader.querySelectorAll('.nav-link').forEach(link => link.classList.add('text-gray-700'));
+                } else {
+                    mainHeader.classList.remove('scrolled-header');
+                    mainHeader.querySelectorAll('.nav-link').forEach(link => link.classList.remove('text-gray-700'));
                 }
-            });
+            }
+            window.addEventListener('scroll', handleHeaderScroll);
+            handleHeaderScroll(); // Uruchomienie przy starcie
 
 
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-
-                    setTimeout(() => {
-                        mobileMenu.classList.add('hidden');
-                        const icon = mobileMenuButton.querySelector('i');
-                        if (icon) {
-                            icon.setAttribute('data-lucide', 'menu');
-                            if (typeof lucide !== 'undefined') {
-                                lucide.createIcons();
-                            }
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    if (icon) {
+                        icon.setAttribute('data-lucide', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
+                        if (typeof lucide !== 'undefined') {
+                            lucide.createIcons();
                         }
-                    }, 150); // Krótkie opóźnienie
+                    }
                 });
-            });
-        }
-
-        if (heroText) {
-            function handleParallax() {
-                const scrollPos = window.scrollY;
-
-                heroText.style.transform = `translateY(${scrollPos * 0.3}px)`;
-            }
-            window.addEventListener('scroll', handleParallax);
-        }
-
-        const observerOptions = {
-            root: null, 
-            rootMargin: '0px',
-            threshold: 0.2 
-        };
-
-        const observerCallback = (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                }
-
-            });
-        };
-
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-        elementsToAnimate.forEach(element => {
-            const delayClass = Array.from(element.classList).find(cls => cls.startsWith('delay-'));
-            if (delayClass) {
-                const delayMs = parseInt(delayClass.split('-')[1]);
-                element.style.transitionDelay = `${delayMs}ms`;
-            }
-            observer.observe(element);
-        });
 
 
-        const pathSectionMap = {
-            '/': 'hero',
-            '/o-mnie': 'o-mnie', 
-            '/umiejetnosci': 'umiejetnosci',
-            '/projekty': 'projekty',
-            '/cennik': 'cennik',
-            '/kontakt': 'kontakt'
-        };
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
 
-        function smoothScrollToSection(targetId) {
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                // Dostosuj scroll do wysokości nagłówka, aby element nie był nim zakryty
-                const headerHeight = mainHeader ? mainHeader.offsetHeight : 0;
-                // Odejmujemy wysokość nagłówka plus mały margines
-                const targetPosition = targetElement.offsetTop - headerHeight - 10; 
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
+                        setTimeout(() => {
+                            mobileMenu.classList.add('hidden');
+                            const icon = mobileMenuButton.querySelector('i');
+                            if (icon) {
+                                icon.setAttribute('data-lucide', 'menu');
+                                if (typeof lucide !== 'undefined') {
+                                    lucide.createIcons();
+                                }
+                            }
+                        }, 150); // Krótkie opóźnienie
+                    });
                 });
             }
-        }
 
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                const path = link.getAttribute('href');
+            if (heroText) {
+                function handleParallax() {
+                    const scrollPos = window.scrollY;
 
-                if (link.getAttribute('target') === '_blank') {
-                    return;
+                    heroText.style.transform = `translateY(${scrollPos * 0.3}px)`;
                 }
-                
-                if (pathSectionMap[path]) {
-                    e.preventDefault(); 
-                    const targetId = pathSectionMap[path];
+                window.addEventListener('scroll', handleParallax);
+            }
 
-                    // Zmień URL i przewiń
-                    history.pushState(null, null, path);
-                    smoothScrollToSection(targetId);
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const observerCallback = (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            elementsToAnimate.forEach(element => {
+                const delayClass = Array.from(element.classList).find(cls => cls.startsWith('delay-'));
+                if (delayClass) {
+                    const delayMs = parseInt(delayClass.split('-')[1]);
+                    element.style.transitionDelay = `${delayMs}ms`;
+                }
+                observer.observe(element);
+            });
+
+
+            const pathSectionMap = {
+                '/': 'hero',
+                '/o-mnie': 'o-mnie',
+                '/umiejetnosci': 'umiejetnosci',
+                '/projekty': 'projekty',
+                '/cennik': 'cennik',
+                '/kontakt': 'kontakt'
+            };
+
+            function smoothScrollToSection(targetId) {
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    // Dostosuj scroll do wysokości nagłówka, aby element nie był nim zakryty
+                    const headerHeight = mainHeader ? mainHeader.offsetHeight : 0;
+                    // Odejmujemy wysokość nagłówka plus mały margines
+                    const targetPosition = targetElement.offsetTop - headerHeight - 10;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const path = link.getAttribute('href');
+
+                    if (link.getAttribute('target') === '_blank') {
+                        return;
+                    }
+
+                    if (pathSectionMap[path]) {
+                        e.preventDefault();
+                        const targetId = pathSectionMap[path];
+
+                        // Zmień URL i przewiń
+                        history.pushState(null, null, path);
+                        smoothScrollToSection(targetId);
+                    }
+
+                    else if (path === '/') {
+                        e.preventDefault();
+                        history.pushState(null, null, '/');
+                        smoothScrollToSection('hero');
+                    }
+
+                    else if (path.startsWith('#')) {
+                        e.preventDefault();
+                        smoothScrollToSection(path.substring(1));
+                    }
+                });
+            });
+
+            window.addEventListener('popstate', () => {
+                const currentPath = window.location.pathname;
+
+                if (pathSectionMap[currentPath]) {
+                    smoothScrollToSection(pathSectionMap[currentPath]);
                 }
 
-                else if (path === '/') {
-                    e.preventDefault();
-                    history.pushState(null, null, '/');
+                else if (currentPath === '/') {
                     smoothScrollToSection('hero');
                 }
 
-                else if (path.startsWith('#')) {
-                    e.preventDefault();
-                    smoothScrollToSection(path.substring(1));
-                }
             });
-        });
 
-        window.addEventListener('popstate', () => {
-            const currentPath = window.location.pathname;
+            const initialPath = window.location.pathname;
+            if (pathSectionMap[initialPath]) {
 
-            if (pathSectionMap[currentPath]) {
-                smoothScrollToSection(pathSectionMap[currentPath]);
+                setTimeout(() => {
+                    smoothScrollToSection(pathSectionMap[initialPath]);
+                }, 50);
             }
 
-            else if (currentPath === '/') {
-                 smoothScrollToSection('hero');
-            }
-        
         });
-
-        const initialPath = window.location.pathname;
-        if (pathSectionMap[initialPath]) {
-
-            setTimeout(() => {
-                smoothScrollToSection(pathSectionMap[initialPath]);
-            }, 50); 
-        }
-
-    });
-</script>
+    </script>
 </body>
 
 </html>
